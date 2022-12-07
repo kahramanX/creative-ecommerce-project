@@ -1,5 +1,12 @@
-function App() {
-  return <div className="App">TEST</div>;
-}
+import React from "react";
+import Routers from "Routes";
+
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      <Routers />
+    </div>
+  );
+};
 
 export default App;
