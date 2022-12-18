@@ -1,5 +1,5 @@
 import Components from "Components";
-import HomePage from "pages/HomePage/HomePage";
+import HomePage from "pages/HomePage/index";
 import { Routes, Route } from "react-router-dom";
 
 const Routers: React.FC = () => {

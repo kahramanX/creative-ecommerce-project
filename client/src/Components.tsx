@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const Components = (props: Props) => {
+const Components: React.FC = () => {
   return <div>Components</div>;
 };
 
