@@ -1,0 +1,50 @@
+@import "assets/styles/variables.scss";
+
+.marquee-line {
+  border-top: $bold-border;
+  border-bottom: $bold-border;
+
+  .marquee-text.text-black {
+    color: $base-black;
+  }
+
+  .marquee-text.text-white {
+    color: $base-white;
+  }
+
+  .marquee-text.text-stroke {
+    color: transparent !important;
+    -webkit-text-stroke: 2px black;
+  }
+
+  .marquee-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 28px;
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+
+    span {
+      margin-left: 8px;
+      font-size: 32px;
+      -webkit-text-stroke: 0px;
+      font-variation-settings: "FILL" 1 !important;
+    }
+  }
+}
+
+.marquee-line.background-yellow {
+  background-color: $base-yellow;
+}
+
+.marquee-line.background-white {
+  background-color: $base-white;
+}
+
+.marquee-line.background-transparent {
+  background-color: transparent;
+}

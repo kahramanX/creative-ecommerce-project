@@ -10,7 +10,19 @@ const HomePage: React.FC = (props: Props) => {
       <Helmet>
         <title>MR.SCRUBBER</title>
       </Helmet>
-      <TextMarquee />
+      {/*   <TextMarquee
+        text="Bestsellers"
+        textColor="black"
+        backgroundColor="yellow"
+        iconColor="black"
+      />
+
+      <TextMarquee
+        text="Categories"
+        textColor="black"
+        backgroundColor="white"
+        iconColor="red"
+      /> */}
 
       <div>HomePage</div>
     </>
