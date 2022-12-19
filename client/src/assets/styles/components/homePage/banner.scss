@@ -47,7 +47,6 @@
         font-size: 36px;
         font-weight: 900;
         margin-bottom: 28px;
-        border: 1px solid red;
 
         @media (max-width: 830px) {
           font-size: 34px;
@@ -81,10 +80,6 @@
             }
           }
         }
-      }
-
-      .btn {
-        border: 1px solid red;
       }
     }
   }
