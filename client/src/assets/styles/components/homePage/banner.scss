@@ -4,6 +4,15 @@
   display: grid;
   grid-template-columns: 1.3fr 1fr;
 
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .banner-left {
     border-right: $bold-border;
 
@@ -25,10 +34,36 @@
       border-left: none;
       padding: 50px 10px;
 
+      @media (max-width: 600px) {
+        padding: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
       .bnr-right-texts {
         font-size: 36px;
         font-weight: 900;
         margin-bottom: 28px;
+        border: 1px solid red;
+
+        @media (max-width: 830px) {
+          font-size: 34px;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 32px;
+        }
+
+        @media (max-width: 738px) {
+          font-size: 28px;
+        }
+
+        @media (max-width: 375px) {
+          font-size: 24px;
+        }
 
         span {
           display: block;
@@ -36,8 +71,20 @@
           &:last-child {
             margin-top: 8px;
             margin-left: 48px;
+
+            @media (max-width: 738px) {
+              margin-left: 28px;
+            }
+
+            @media (max-width: 600px) {
+              margin-left: 48px;
+            }
           }
         }
+      }
+
+      .btn {
+        border: 1px solid red;
       }
     }
   }
