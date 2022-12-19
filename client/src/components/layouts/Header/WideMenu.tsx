@@ -2,7 +2,7 @@ import React from "react";
 
 type Props = {};
 
-const WideMenu = (props: Props) => {
+const WideMenu: React.FC = (props: Props) => {
   return (
     <div className="header-bottom-container">
       <div className="menu-list-container">
