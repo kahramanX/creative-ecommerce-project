@@ -2,9 +2,13 @@ import React from "react";
 
 type Props = {};
 
-const TopContainer = (props: Props) => {
+const TopContainer: React.FC = (props: Props) => {
   return (
     <div className="header-top-container">
+      <div className="mobile-menu-btn">
+        <span className="material-symbols-outlined">menu</span>
+      </div>
+
       <div className="header-top-left">
         <div className="logo">Mr.SCRUBBER</div>
       </div>
