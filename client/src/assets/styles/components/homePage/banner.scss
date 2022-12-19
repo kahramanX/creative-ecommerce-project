@@ -1,0 +1,44 @@
+@import "assets/styles/variables.scss";
+
+.banner-container {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+
+  .banner-left {
+    border-right: $bold-border;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 500px;
+    }
+  }
+
+  .banner-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .banner-right-box {
+      background-color: $base-white;
+      border: $light-border;
+      border-left: none;
+      padding: 50px 10px;
+
+      .bnr-right-texts {
+        font-size: 36px;
+        font-weight: 900;
+        margin-bottom: 28px;
+
+        span {
+          display: block;
+
+          &:last-child {
+            margin-top: 8px;
+            margin-left: 48px;
+          }
+        }
+      }
+    }
+  }
+}
