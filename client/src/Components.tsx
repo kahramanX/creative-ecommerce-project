@@ -12,12 +12,12 @@ const Components: React.FC = () => {
       </div>
       <br />
       <div>
-        <FlatButton text="Shop Now" textSize="md" />
+        <FlatButton text="Send message" textSize="md" />
       </div>
       <br />
       <div>
         <Product
-          productTitle={"alışveriş çantası"}
+          productTitle={"alışveriş sssssssssssssssssssssssssssssçantası"}
           productImage={BannerImage}
           productLink="#"
           isDiscounted={false}

@@ -1,6 +1,7 @@
 import React from "react";
 import "assets/styles/components/shared/product.scss";
 import { Link } from "react-router-dom";
+import FlatButton from "./FlatButton";
 
 type Props = {
   productTitle: string;
@@ -51,6 +52,10 @@ const Product: React.FC<Props> = ({
                 </span>
               </div>
             </div>
+          </div>
+          <div className="pt-hovered-button">
+            Add to Cart{" "}
+            <span className="material-symbols-outlined">arrow_forward</span>
           </div>
         </div>
       </div>
