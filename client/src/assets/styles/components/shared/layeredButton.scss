@@ -39,8 +39,8 @@
   &:after {
     position: absolute;
     content: "";
-    top: 10px;
-    left: 10px;
+    top: 4px;
+    left: 4px;
     height: 100%;
     width: 100%;
     z-index: -1;
@@ -55,7 +55,7 @@
     }
 
     &:after {
-      transform: translate(-10px, -10px);
+      transform: translate(-4px, -4px);
       width: 100%;
     }
   }
