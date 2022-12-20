@@ -1,0 +1,85 @@
+@import "assets/styles/variables.scss";
+
+.product-box {
+  position: relative;
+  width: 300px;
+
+  .product-top {
+    border: $bold-border;
+
+    .product-fav {
+      cursor: pointer;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+
+    .product-image {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .product-bottom {
+    display: flex;
+    margin-top: 8px;
+
+    .pt-bottom-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .pt-bottom-right {
+      .price-box {
+        .current-price,
+        .prev-price {
+          border: $light-border;
+          background-color: $base-black;
+          position: relative;
+          color: $base-white;
+          padding: 4px 6px;
+
+          .current-price-value,
+          .prev-price-value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+          }
+
+          &:after {
+            position: absolute;
+            content: "";
+            top: 2px;
+            left: 2px;
+            height: 100%;
+            width: 100%;
+            border: $light-border;
+            z-index: -1;
+          }
+        }
+
+        .prev-price {
+          background-color: $base-white;
+          color: $base-black;
+          margin-bottom: 8px;
+
+          &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            border-bottom: 3px solid $base-red;
+            z-index: 2;
+            transform: rotate(160deg);
+          }
+        }
+      }
+    }
+  }
+}
