@@ -1,40 +1,53 @@
 import React from "react";
-import BannerImage from "assets/images/bannerImage.webp";
 import "assets/styles/components/shared/product.scss";
 import { Link } from "react-router-dom";
 
-type Props = {};
+type Props = {
+  productTitle: string;
+  productImage: string;
+  productLink: string;
+  isDiscounted: boolean;
+  prevPrice?: number;
+  currentPrice: number;
+};
 
-const Product: React.FC = () => {
+const Product: React.FC<Props> = ({
+  productTitle,
+  productImage,
+  isDiscounted,
+  prevPrice,
+  currentPrice,
+  productLink = "#",
+}) => {
   return (
-    <Link to={"#"}>
+    <Link to={productLink}>
       <div className="product-box">
         <div className="product-top">
           <div className="product-fav">
             <span className="material-symbols-outlined">favorite</span>
           </div>
           <div className="product-image">
-            <img src={BannerImage} />
+            <img src={productImage} />
           </div>
         </div>
         <div className="product-bottom">
           <div className="pt-bottom-left">
-            <div className="product-title">
-              Face roller + Face serum with glycolic AHA acid
-            </div>
+            <div className="product-title">{productTitle}</div>
           </div>
           <div className="pt-bottom-right">
             <div className="price-box">
-              <div className="prev-price">
-                <span className="prev-price-value">
-                  <span className="current-price-value">
-                    30.00 <span className="currency">$</span>
+              {isDiscounted && (
+                <div className="prev-price">
+                  <span className="prev-price-value">
+                    <span className="current-price-value">
+                      {prevPrice} <span className="currency">$</span>
+                    </span>
                   </span>
-                </span>
-              </div>
+                </div>
+              )}
               <div className="current-price">
                 <span className="current-price-value">
-                  30.00 <span className="currency">$</span>
+                  {currentPrice} <span className="currency">$</span>
                 </span>
               </div>
             </div>

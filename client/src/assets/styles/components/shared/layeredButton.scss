@@ -50,6 +50,10 @@
   }
 
   &:hover {
+    .material-symbols-outlined {
+      transform: rotate(45deg);
+    }
+
     &:after {
       transform: translate(-10px, -10px);
       width: 100%;

@@ -2,6 +2,7 @@ import LayeredButton from "components/shared/LayeredButton";
 import FlatButton from "components/shared/FlatButton";
 import Product from "components/shared/Product";
 import React from "react";
+import BannerImage from "assets/images/bannerImage.webp";
 
 const Components: React.FC = () => {
   return (
@@ -15,7 +16,21 @@ const Components: React.FC = () => {
       </div>
       <br />
       <div>
-        <Product />
+        <Product
+          productTitle={"alışveriş çantası"}
+          productImage={BannerImage}
+          productLink="#"
+          isDiscounted={false}
+          currentPrice={30}
+        />
+        <Product
+          productTitle={"Alışveriş çantası Krasa Riatuie Svit "}
+          productImage={BannerImage}
+          productLink="#"
+          isDiscounted={true}
+          prevPrice={60}
+          currentPrice={31}
+        />
       </div>
     </div>
   );
