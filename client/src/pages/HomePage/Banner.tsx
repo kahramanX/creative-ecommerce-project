@@ -1,6 +1,7 @@
 import React from "react";
 import BannerImage from "assets/images/bannerImage.webp";
 import "assets/styles/components/homePage/banner.scss";
+import LayeredButton from "components/shared/LayeredButton";
 
 type Props = {
   bannerColorCode: string | undefined;
@@ -22,7 +23,7 @@ const Banner: React.FC<Props> = ({ bannerColorCode }) => {
             <span>Tenderness, care</span>
             <span>and warmth inside</span>
           </div>
-          <div className="btn"> Shop</div>
+          <LayeredButton text="Shop Now" textSize="sm" />
         </div>
       </div>
     </div>

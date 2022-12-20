@@ -35,13 +35,13 @@ const HomePage: React.FC = (props: Props) => {
         <title>MR.SCRUBBER</title>
       </Helmet>
       <Banner bannerColorCode={bannerBackgroundColor} />
-      {/*   <TextMarquee
+      <TextMarquee
         text="Bestsellers"
         textColor="black"
         backgroundColor="yellow"
         iconColor="black"
       />
-
+      {/* 
       <TextMarquee
         text="Categories"
         textColor="black"
