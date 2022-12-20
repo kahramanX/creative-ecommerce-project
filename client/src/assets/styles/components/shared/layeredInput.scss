@@ -1,33 +1,35 @@
 @import "assets/styles/variables.scss";
 
-@import "assets/styles/variables.scss";
-
-.flat-button-container {
+.layered-input-container {
+  position: relative;
   color: $base-white;
   background-color: $base-black;
   border: $light-border;
   transition: background-color 0.2s ease-in;
   width: fit-content;
-  padding: 12px 42px;
 
-  &:hover {
-    cursor: pointer;
+  &:after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;
+    border: $light-border;
+    background-color: $base-pink;
   }
 
-  &:active {
-    background-color: $base-red;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='28' height='34' viewport='0 0 100 100' style='fill:black;font-size:17px;'><text y='50%'>👍</text></svg>")
-        16 0,
-      auto; /*!emojicursor.app*/
-  }
+  input {
+    padding: 14px 22px;
 
-  .front-button {
-    text-align: center;
-    font-weight: 600;
+    &:focus {
+      background-color: $base-pink;
 
-    span {
-      transition: transform 0.1s ease-in;
-      margin-left: 8px;
+      &::after {
+        background-color: $base-white;
+      }
     }
   }
 }

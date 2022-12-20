@@ -35,7 +35,11 @@ const Components: React.FC = () => {
       </div>
       <br />
       <div>
-        <LayeredInput />
+        <LayeredInput
+          inputType={"text"}
+          placeholderText={"Your Name"}
+          onChangeAction={() => console.log(" on change")}
+        />
       </div>
     </div>
   );

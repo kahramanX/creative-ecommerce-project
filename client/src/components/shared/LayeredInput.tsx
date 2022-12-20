@@ -1,11 +1,24 @@
 import React from "react";
+import "assets/styles/components/shared/layeredInput.scss";
 
-type Props = {};
+type Props = {
+  inputType: "text" | "number";
+  placeholderText: string;
+  onChangeAction?: any;
+};
 
-const LayeredInput: React.FC = (props: Props) => {
+const LayeredInput: React.FC<Props> = ({
+  inputType = "text",
+  placeholderText,
+  onChangeAction,
+}) => {
   return (
     <div className="layered-input-container">
-      <input type={"text"} />
+      <input
+        type={inputType}
+        placeholder={placeholderText}
+        onChange={() => onChangeAction()}
+      />
     </div>
   );
 };
