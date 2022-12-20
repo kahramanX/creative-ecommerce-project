@@ -70,13 +70,15 @@
           color: $base-black;
           margin-bottom: 8px;
 
-          &::before {
-            position: absolute;
-            content: "";
-            width: 100%;
-            border-bottom: 3px solid $base-red;
-            z-index: 2;
-            transform: rotate(160deg);
+          .prev-price-value {
+            &::before {
+              position: absolute;
+              content: "";
+              width: 100%;
+              border-bottom: 3px solid $base-red;
+              z-index: 2;
+              transform: rotate(160deg);
+            }
           }
         }
       }
