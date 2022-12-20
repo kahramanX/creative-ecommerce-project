@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import "assets/styles/components/layouts/header.scss";
 import TopContainer from "./TopContainer";
 import WideMenu from "./WideMenu";

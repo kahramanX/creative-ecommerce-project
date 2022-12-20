@@ -6,6 +6,11 @@ body {
 
 // RESET CSS START
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 ol,
 ul {
   list-style: none;
@@ -43,4 +48,7 @@ section {
   box-sizing: border-box;
 }
 
+.components-container {
+  padding: 100px;
+}
 // RESET CSS END

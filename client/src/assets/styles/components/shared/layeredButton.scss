@@ -1,0 +1,77 @@
+@import "assets/styles/variables.scss";
+
+.layered-button-container {
+  position: relative;
+  background-color: transparent;
+  border: $light-border;
+  color: $base-white;
+  background-color: $base-black;
+  transition: background-color 0.2s ease-in;
+  width: fit-content;
+  padding: 12px 42px;
+
+  &:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='28' height='34' viewport='0 0 100 100' style='fill:black;font-size:17px;'><text y='50%'>🤔</text></svg>")
+        16 0,
+      auto; /*!emojicursor.app*/
+  }
+
+  &:active {
+    background-color: $base-red;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='28' height='34' viewport='0 0 100 100' style='fill:black;font-size:17px;'><text y='50%'>👍</text></svg>")
+        16 0,
+      auto; /*!emojicursor.app*/
+  }
+
+  .front-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+
+    span {
+      transition: transform 0.2s ease-in;
+      margin-left: 8px;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: transform 0.2s ease-in, width 0.2s ease-out 0.2s;
+    border: $light-border;
+    background-color: transparent;
+  }
+
+  &:hover {
+    .material-symbols-outlined {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: translate(-4px, -4px);
+      width: 100%;
+    }
+  }
+
+  &:active {
+    .material-symbols-outlined {
+      transform: rotate(90deg);
+      font-weight: 800;
+    }
+  }
+}
+
+.layered-button-container.text-sm {
+  font-size: 16px;
+}
+
+.layered-button-container.text-md {
+  font-size: 22px;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -10,7 +11,9 @@ const TopContainer: React.FC = (props: Props) => {
       </div>
 
       <div className="header-top-left">
-        <div className="logo">Mr.SCRUBBER</div>
+        <Link to={"/"}>
+          <div className="logo">Mr.SCRUBBER</div>
+        </Link>
       </div>
 
       <div className="header-top-right">
