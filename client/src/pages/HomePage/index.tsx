@@ -67,6 +67,7 @@ const HomePage: React.FC = (props: Props) => {
         textColor="black"
         backgroundColor="white"
         iconColor="red"
+        isBorderActive={false}
       />
       <div className="hp-categories-section">
         <SortedCategories
