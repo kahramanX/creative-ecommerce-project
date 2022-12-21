@@ -6,8 +6,17 @@ import BannerImage from "assets/images/bannerImage.webp";
 import LayeredInput from "components/shared/LayeredInput";
 import BlogPost from "components/shared/BlogPost";
 import Accordion from "components/shared/Accordion";
+import FilterAccordion from "components/shared/FilterAccordion";
+import { FilteredAccordionI } from "types/types";
 
 const Components: React.FC = () => {
+  const FilterAccordionContent: FilteredAccordionI[] = [
+    { label: "XXX color" },
+    { label: "XXX style" },
+    { label: "XXX border" },
+    { label: "XXX content" },
+  ];
+
   return (
     <div className="components-container">
       <div>
@@ -66,6 +75,9 @@ const Components: React.FC = () => {
         <input id="testing" type={"checkbox"} />
         <input type={"checkbox"} checked />
         <input type={"radio"} checked />
+      </div>
+      <div>
+        <FilterAccordion FATitle="Type" FAItems={FilterAccordionContent} />
       </div>
     </div>
   );
