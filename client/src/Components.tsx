@@ -73,8 +73,8 @@ const Components: React.FC = () => {
       <div>
         <label htmlFor={"testing"}> Hey guys</label>
         <input id="testing" type={"checkbox"} />
-        <input type={"checkbox"} checked />
-        <input type={"radio"} checked />
+        <input type={"checkbox"} defaultChecked />
+        <input type={"radio"} defaultChecked />
       </div>
       <div>
         <FilterAccordion FATitle="Type" FAItems={FilterAccordionContent} />

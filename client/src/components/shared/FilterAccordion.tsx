@@ -17,7 +17,7 @@ const FilterAccordion: React.FC<Props> = ({ FATitle, FAItems }) => {
         <div className="fltr-items">
           {FAItems.map((FAitem, index) => {
             return (
-              <div className="filter-item">
+              <div key={index} className="filter-item">
                 <input id={`item-${index}`} type={"checkbox"} />
                 <label htmlFor={`item-${index}`}>{FAitem.label}</label>
               </div>
