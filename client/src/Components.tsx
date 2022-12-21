@@ -60,6 +60,13 @@ const Components: React.FC = () => {
           }
         />
       </div>
+
+      <div>
+        <label htmlFor={"testing"}> Hey guys</label>
+        <input id="testing" type={"checkbox"} />
+        <input type={"checkbox"} checked />
+        <input type={"radio"} checked />
+      </div>
     </div>
   );
 };
