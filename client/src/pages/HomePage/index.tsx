@@ -77,6 +77,15 @@ const HomePage: React.FC = (props: Props) => {
           selectedImage={selectedImage}
         />
       </div>
+      <div className="hp-sales-section">
+        <TextMarquee
+          text="Sales"
+          textColor="white"
+          backgroundColor="transparent"
+          iconColor="yellow"
+          isBorderActive={false}
+        />
+      </div>
       <div>HomePage</div>
     </>
   );
