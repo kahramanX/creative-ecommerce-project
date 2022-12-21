@@ -85,6 +85,21 @@ const HomePage: React.FC = (props: Props) => {
           iconColor="yellow"
           isBorderActive={false}
         />
+        <div className="hp-sales-container">
+          {[0, 1, 2, 3, 4, 5].map((product, index) => {
+            return (
+              <Product
+                key={index}
+                productTitle={"Alışveriş çantası Krasa Riatuie Svit "}
+                productImage={BannerImage}
+                productLink="#"
+                isDiscounted={true}
+                prevPrice={60}
+                currentPrice={31}
+              />
+            );
+          })}
+        </div>
       </div>
       <div>HomePage</div>
     </>
