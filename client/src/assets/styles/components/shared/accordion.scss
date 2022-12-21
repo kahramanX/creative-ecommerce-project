@@ -1,0 +1,32 @@
+@import "assets/styles/variables.scss";
+
+.accordion-container {
+  border: $bold-border;
+
+  &[open] {
+    .accordion-title {
+      span {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .accordion-title {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 800;
+    cursor: pointer;
+
+    span {
+      font-weight: 800;
+      font-size: 28px;
+      transition: rotate 200ms;
+    }
+  }
+  .accordion-content {
+    font-weight: 500;
+    padding: 10px 30px;
+  }
+}

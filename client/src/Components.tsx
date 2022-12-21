@@ -5,6 +5,7 @@ import React from "react";
 import BannerImage from "assets/images/bannerImage.webp";
 import LayeredInput from "components/shared/LayeredInput";
 import BlogPost from "components/shared/BlogPost";
+import Accordion from "components/shared/Accordion";
 
 const Components: React.FC = () => {
   return (
@@ -49,6 +50,14 @@ const Components: React.FC = () => {
           blogPostLink="bloglinkxxx"
           blogPostShortDesc="Putches under the eyes quickly entered the beauty sphere and today many women around the world use xxxxxxxxxxxxxxxxxxxxxxx"
           blogPostImage={BannerImage}
+        />
+      </div>
+      <div>
+        <Accordion
+          accordionTitle="Just test bro"
+          accordionContent={
+            "<p>Im testing bro</p><p>yes bro just testing :)</p><p>:)</p>"
+          }
         />
       </div>
     </div>
