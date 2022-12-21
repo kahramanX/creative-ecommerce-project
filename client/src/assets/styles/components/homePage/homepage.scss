@@ -110,3 +110,65 @@
 .hp-blog-section {
   @include homepage-grid-styles;
 }
+
+.hp-subscription-section {
+  padding: 45px 120px;
+
+  @media (max-width: 900px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  .hp-subscription-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: $light-border;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .form-subs-left {
+      padding-left: 14px;
+      padding-right: 14px;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      @media (max-width: 768px) {
+        padding: 18px 24px;
+      }
+
+      p {
+        font-weight: 600;
+      }
+
+      div {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 22px;
+        }
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    .form-subs-right {
+      @media (max-width: 768px) {
+        display: none;
+      }
+      border-left: $bold-border;
+
+      img {
+        object-fit: cover;
+        height: 500px;
+        width: 100%;
+      }
+    }
+  }
+}
