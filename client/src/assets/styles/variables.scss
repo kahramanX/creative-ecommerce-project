@@ -5,3 +5,25 @@ $base-red: #d11354;
 $base-yellow: #fff178;
 $bold-border: 3px solid #000000;
 $light-border: 1px solid #000000;
+
+@mixin homepage-grid-styles {
+  padding: 45px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  @media (max-width: 900px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 425px) {
+    padding: 10px;
+    grid-template-columns: 1fr;
+  }
+}

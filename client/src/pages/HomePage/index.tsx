@@ -7,6 +7,7 @@ import BannerImage from "assets/images/bannerImage.webp";
 import Product from "components/shared/Product";
 import "assets/styles/components/homePage/homepage.scss";
 import SortedCategories from "./SortedCategories";
+import BlogPost from "components/shared/BlogPost";
 
 type Props = {};
 
@@ -100,6 +101,25 @@ const HomePage: React.FC = (props: Props) => {
             );
           })}
         </div>
+      </div>
+      <TextMarquee
+        text="Blog"
+        textColor="black"
+        backgroundColor="transparent"
+        iconColor="red"
+        isBorderActive={false}
+      />
+      <div className="hp-blog-section">
+        {[0, 1, 2].map((product, index) => {
+          return (
+            <BlogPost
+              blogPostTitle="How to properly use patches under the eyes?"
+              blogPostLink="bloglinkxxx"
+              blogPostShortDesc="Putches under the eyes quickly entered the beauty sphere and today many women around the world use xxxxxxxxxxxxxxxxxxxxxxx"
+              blogPostImage={BannerImage}
+            />
+          );
+        })}
       </div>
       <div>HomePage</div>
     </>
