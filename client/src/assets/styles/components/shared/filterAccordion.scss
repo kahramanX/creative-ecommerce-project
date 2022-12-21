@@ -1,0 +1,63 @@
+@import "assets/styles/variables.scss";
+@import "assets/styles/variables.scss";
+
+.filtered-accordion-container {
+  position: relative;
+  border: $light-border;
+  background-color: $base-white;
+
+  &:after {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: transform 0.2s ease-in;
+    border: $light-border;
+    background-color: $base-pink;
+  }
+
+  &[open] {
+    .fltr-acc-title {
+      span {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .fltr-acc-title {
+    font-size: 1.5em;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 900;
+    cursor: pointer;
+
+    span {
+      font-weight: 900;
+      font-size: 28px;
+      transition: rotate 200ms;
+    }
+  }
+
+  .fltr-acc-content {
+    font-weight: 500;
+    padding: 10px 15px;
+
+    .fltr-items {
+      .filter-item {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        margin-bottom: 8px;
+
+        input {
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+}

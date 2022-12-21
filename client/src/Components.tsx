@@ -5,8 +5,18 @@ import React from "react";
 import BannerImage from "assets/images/bannerImage.webp";
 import LayeredInput from "components/shared/LayeredInput";
 import BlogPost from "components/shared/BlogPost";
+import Accordion from "components/shared/Accordion";
+import FilterAccordion from "components/shared/FilterAccordion";
+import { FilteredAccordionI } from "types/types";
 
 const Components: React.FC = () => {
+  const FilterAccordionContent: FilteredAccordionI[] = [
+    { label: "XXX color" },
+    { label: "XXX style" },
+    { label: "XXX border" },
+    { label: "XXX content" },
+  ];
+
   return (
     <div className="components-container">
       <div>
@@ -50,6 +60,24 @@ const Components: React.FC = () => {
           blogPostShortDesc="Putches under the eyes quickly entered the beauty sphere and today many women around the world use xxxxxxxxxxxxxxxxxxxxxxx"
           blogPostImage={BannerImage}
         />
+      </div>
+      <div>
+        <Accordion
+          accordionTitle="Just test bro"
+          accordionContent={
+            "<p>Im testing bro</p><p>yes bro just testing :)</p><p>:)</p>"
+          }
+        />
+      </div>
+
+      <div>
+        <label htmlFor={"testing"}> Hey guys</label>
+        <input id="testing" type={"checkbox"} />
+        <input type={"checkbox"} defaultChecked />
+        <input type={"radio"} defaultChecked />
+      </div>
+      <div>
+        <FilterAccordion FATitle="Type" FAItems={FilterAccordionContent} />
       </div>
     </div>
   );
