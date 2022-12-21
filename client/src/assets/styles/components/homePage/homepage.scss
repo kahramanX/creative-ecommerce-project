@@ -1,0 +1,116 @@
+@import "assets/styles/variables.scss";
+
+.hp-bestsellers-section {
+  padding: 45px 120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  @media (max-width: 900px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 425px) {
+    padding: 10px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.hp-categories-section {
+  padding: 45px 120px;
+
+  @media (max-width: 900px) {
+    padding: 35px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 425px) {
+    padding: 0px;
+  }
+
+  .sorted-categories-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: $light-border;
+
+    @media (max-width: 630px) {
+      grid-template-columns: 1fr;
+    }
+
+    .category-img {
+      border-right: $light-border;
+
+      @media (max-width: 630px) {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .sorted-categories {
+      .category-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: $bold-border;
+        padding: 12px 38px;
+        cursor: pointer;
+        transition: background-color 200ms;
+
+        @media (max-width: 768px) {
+          padding: 8px 28px;
+        }
+
+        span {
+          font-size: 24px;
+
+          &:first-child {
+            visibility: hidden;
+            color: $base-red;
+            margin-right: 12px;
+            transition: visibility 200ms;
+          }
+
+          &:last-child {
+            margin-left: -30px;
+            font-weight: 800;
+            transition: color 200ms, -webkit-text-stroke 200ms,
+              -webkit-text-stroke-color 200ms, letter-spacing 200ms,
+              margin-left 200ms;
+          }
+        }
+      }
+
+      .hovered-category {
+        background-color: $base-pink;
+
+        span {
+          &:first-child {
+            visibility: visible;
+          }
+
+          &:last-child {
+            margin-left: 0px;
+            color: $base-white;
+            -webkit-text-stroke: 1px;
+            -webkit-text-stroke-color: black;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}

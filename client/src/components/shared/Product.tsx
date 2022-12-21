@@ -1,7 +1,6 @@
 import React from "react";
 import "assets/styles/components/shared/product.scss";
 import { Link } from "react-router-dom";
-import FlatButton from "./FlatButton";
 
 type Props = {
   productTitle: string;
