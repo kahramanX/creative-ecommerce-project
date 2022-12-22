@@ -3,8 +3,6 @@ import "assets/styles/components/layouts/footer.scss";
 import FooterSection from "./FooterSection";
 import { FooterSectionI } from "types/types";
 
-type Props = {};
-
 const footerSections: FooterSectionI[] = [
   {
     sectionTitle: "To Clients",
@@ -100,7 +98,7 @@ const footerSections: FooterSectionI[] = [
   },
 ];
 
-const Footer: React.FC = (props: Props) => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <div className="footer-section-container">

@@ -6,9 +6,7 @@ import BannerImage from "assets/images/bannerImage.webp";
 import NothingHere from "components/NothingHere";
 import { Helmet } from "react-helmet-async";
 
-type Props = {};
-
-const SearchPage: React.FC = (props: Props) => {
+const SearchPage: React.FC = () => {
   return (
     <>
       <Helmet>

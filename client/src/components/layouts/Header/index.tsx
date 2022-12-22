@@ -4,8 +4,6 @@ import TopContainer from "./TopContainer";
 import WideMenu from "./WideMenu";
 import ResponsiveHeaderMenu from "components/ResponsiveHeaderMenu";
 
-type Props = {};
-
 const Header: React.FC = () => {
   const [openResponsiveMenuOnHeader, setOpenResponsiveMenuOnHeader] =
     useState<boolean>(false);

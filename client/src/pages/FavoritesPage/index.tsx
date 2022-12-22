@@ -4,9 +4,7 @@ import BannerImage from "assets/images/bannerImage.webp";
 import NothingHere from "components/NothingHere";
 import { Helmet } from "react-helmet-async";
 
-type Props = {};
-
-const FavoritesPage: React.FC = (props: Props) => {
+const FavoritesPage: React.FC = () => {
   return (
     <>
       <Helmet>
