@@ -1,8 +1,6 @@
 import React from "react";
 
-type Props = {};
-
-const NothingHere: React.FC = (props: Props) => {
+const NothingHere: React.FC = () => {
   return (
     <div className="there-is-no-item">
       There is nothing here 🤔 Take action now!🚀

@@ -4,16 +4,17 @@ import TopContainer from "./TopContainer";
 import WideMenu from "./WideMenu";
 import ResponsiveHeaderMenu from "components/ResponsiveHeaderMenu";
 
-type Props = {};
-
 const Header: React.FC = () => {
   const [openResponsiveMenuOnHeader, setOpenResponsiveMenuOnHeader] =
-    useState<boolean>();
+    useState<boolean>(false);
+  const [isGhostScreenActive, setisGhostScreenActive] =
+    useState<boolean>(false);
 
   return (
     <>
       <header>
         <TopContainer
+          setisGhostScreenActive={setisGhostScreenActive}
           setOpenResponsiveMenuOnHeader={setOpenResponsiveMenuOnHeader}
         />
         <WideMenu
@@ -21,12 +22,13 @@ const Header: React.FC = () => {
         />
       </header>
       <ResponsiveHeaderMenu
+        setisGhostScreenActive={setisGhostScreenActive}
         setOpenResponsiveMenuOnHeader={setOpenResponsiveMenuOnHeader}
         openResponsiveMenuOnHeader={openResponsiveMenuOnHeader}
       />
       <div
         className={`ghost-screen ${
-          openResponsiveMenuOnHeader === true ? "open" : "close"
+          isGhostScreenActive === true ? "open" : "close"
         }`}
       ></div>
     </>

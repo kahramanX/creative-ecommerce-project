@@ -3,8 +3,6 @@ import LayeredInput from "components/shared/LayeredInput";
 import React from "react";
 import FormImage from "assets/images/formImage.webp";
 
-type Props = {};
-
 const MailSubscribtion: React.FC = () => {
   return (
     <div className="hp-subscription-form-container">

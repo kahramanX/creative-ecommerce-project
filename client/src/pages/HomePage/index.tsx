@@ -10,9 +10,7 @@ import SortedCategories from "./SortedCategories";
 import BlogPost from "components/shared/BlogPost";
 import MailSubscribtion from "./MailSubscribtion";
 
-type Props = {};
-
-const HomePage: React.FC = (props: Props) => {
+const HomePage: React.FC = () => {
   const [bannerBackgroundColor, setBannerBackgroundColor] = useState<string>();
   const [onHoverCategory, setOnHoverCategory] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string>(BannerImage);
