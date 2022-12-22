@@ -3,14 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import { FastAverageColor } from "fast-average-color";
-import FormImage from "assets/images/formImage.webp";
 import BannerImage from "assets/images/bannerImage.webp";
 import Product from "components/shared/Product";
 import "assets/styles/components/homePage/homepage.scss";
 import SortedCategories from "./SortedCategories";
 import BlogPost from "components/shared/BlogPost";
-import LayeredButton from "components/shared/LayeredButton";
-import LayeredInput from "components/shared/LayeredInput";
+import MailSubscribtion from "./MailSubscribtion";
 
 type Props = {};
 
@@ -116,6 +114,7 @@ const HomePage: React.FC = (props: Props) => {
         {[0, 1, 2].map((product, index) => {
           return (
             <BlogPost
+              key={index}
               blogPostTitle="How to properly use patches under the eyes?"
               blogPostLink="bloglinkxxx"
               blogPostShortDesc="Putches under the eyes quickly entered the beauty sphere and today many women around the world use xxxxxxxxxxxxxxxxxxxxxxx"
@@ -125,20 +124,7 @@ const HomePage: React.FC = (props: Props) => {
         })}
       </div>
       <div className="hp-subscription-section">
-        <div className="hp-subscription-form-container">
-          <div className="form-subs-left">
-            <div>
-              <p>Sign Up to be the first to know about new products,</p>
-              <p>special offers and promotions</p>
-            </div>
-            <LayeredInput placeholderText="Your Name" inputType="text" />
-            <LayeredInput placeholderText="Your Email" inputType="text" />
-            <LayeredButton text="Send" textSize="sm" />
-          </div>
-          <div className="form-subs-right">
-            <img src={FormImage} />
-          </div>
-        </div>
+        <MailSubscribtion />
       </div>
     </>
   );

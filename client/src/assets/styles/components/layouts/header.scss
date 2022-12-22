@@ -1,17 +1,25 @@
 @import "assets/styles/variables.scss";
 
 header {
+  position: relative;
+
   .header-top-container {
     border-bottom: $bold-border !important;
     display: grid;
     justify-content: space-between;
     grid-template-columns: 250px auto;
+    padding-left: 120px;
+    padding-right: 120px;
 
     @media (max-width: 800px) {
+      padding-left: 20px;
+      padding-right: 20px;
       grid-template-columns: 1fr 1fr 1fr !important;
     }
 
     @media (max-width: 425px) {
+      padding-left: 0px;
+      padding-right: 0px;
       grid-template-columns: 1fr 2fr 1fr !important;
     }
 
@@ -19,6 +27,7 @@ header {
       display: flex;
       align-items: center;
       padding-left: 22px;
+      cursor: pointer;
 
       @media (min-width: 800px) {
         display: none;
@@ -43,14 +52,22 @@ header {
         font-weight: 900;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding-top: 16px;
         padding-bottom: 16px;
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🏠</text></svg>")
+            16 0,
+          auto; /*!emojicursor.app*/
+
+        @media (max-width: 800px) {
+          justify-content: center;
+        }
 
         @media (max-width: 425px) {
           font-size: 14px;
           padding-top: 12px;
           padding-bottom: 12px;
+          justify-content: center;
         }
       }
     }
@@ -104,6 +121,30 @@ header {
           margin-right: 12px;
           margin-left: 12px;
 
+          &:nth-child(1) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔍</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(2) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👤</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(3) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❤️</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(4) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🛍️</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
           @media (max-width: 425px) {
             margin-right: 8px;
             margin-left: 8px;
@@ -120,10 +161,6 @@ header {
 
             @media (max-width: 425px) {
               font-size: 14px;
-            }
-
-            &:hover {
-              cursor: pointer;
             }
           }
         }
@@ -146,17 +183,6 @@ header {
 
       @media (max-width: 880px) {
         font-size: 14px;
-      }
-
-      .list-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-          cursor: pointer;
-          background-color: $base-yellow;
-        }
       }
     }
   }

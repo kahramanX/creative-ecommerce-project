@@ -1,6 +1,8 @@
 import React from "react";
 import "assets/styles/components/shared/product.scss";
 import { Link } from "react-router-dom";
+import { FilledFavoriteIcons, OutlinedFavoriteIcons } from "assets/Icons/icons";
+import PriceBox from "./PriceBox";
 
 type Props = {
   productTitle: string;
@@ -9,6 +11,7 @@ type Props = {
   isDiscounted: boolean;
   prevPrice?: number;
   currentPrice: number;
+  isFavorited?: boolean;
 };
 
 const Product: React.FC<Props> = ({
@@ -18,13 +21,18 @@ const Product: React.FC<Props> = ({
   prevPrice,
   currentPrice,
   productLink = "#",
+  isFavorited,
 }) => {
   return (
     <Link to={productLink}>
       <div className="product-box">
         <div className="product-top">
           <div className="product-fav">
-            <span className="material-symbols-outlined">favorite</span>
+            {isFavorited === true ? (
+              <FilledFavoriteIcons />
+            ) : (
+              <OutlinedFavoriteIcons />
+            )}
           </div>
           <div className="product-image">
             <img src={productImage} />
@@ -35,22 +43,11 @@ const Product: React.FC<Props> = ({
             <div className="product-title">{productTitle}</div>
           </div>
           <div className="pt-bottom-right">
-            <div className="price-box">
-              {isDiscounted && (
-                <div className="prev-price">
-                  <span className="prev-price-value">
-                    <span className="current-price-value">
-                      {prevPrice} <span className="currency">$</span>
-                    </span>
-                  </span>
-                </div>
-              )}
-              <div className="current-price">
-                <span className="current-price-value">
-                  {currentPrice} <span className="currency">$</span>
-                </span>
-              </div>
-            </div>
+            <PriceBox
+              isDiscounted={isDiscounted}
+              prevPrice={prevPrice}
+              currentPrice={currentPrice}
+            />
           </div>
           <div className="pt-hovered-button">
             Add to Cart{" "}

@@ -1,23 +1,30 @@
+import LinkItem from "components/shared/MenuItem";
 import React from "react";
 
-type Props = {};
+type Props = {
+  setOpenResponsiveMenuOnHeader: React.Dispatch<
+    React.SetStateAction<boolean | undefined>
+  >;
+};
 
-const WideMenu: React.FC = (props: Props) => {
+const WideMenu: React.FC<Props> = ({ setOpenResponsiveMenuOnHeader }) => {
   return (
     <div className="header-bottom-container">
       <div className="menu-list-container">
-        <div className="list-container">
-          Categories
-          <span className="material-symbols-outlined">expand_more</span>
-        </div>
-        <div className="list-container">About Us</div>
-        <div className="list-container">Blog</div>
-        <div className="list-container">Payment And Delivery</div>
-        <div className="list-container">Contacts</div>
-        <div className="list-container">Public Offer</div>
-        <div className="list-container">Cooperation</div>
-        <div className="list-container">Privacy Policy</div>
-        <div className="list-container">Help</div>
+        <LinkItem
+          linkName="Categories"
+          link="#"
+          linkIconName="expand_more"
+          action={() => setOpenResponsiveMenuOnHeader(true)}
+        />
+        <LinkItem linkName="About Us" link="#" />
+        <LinkItem linkName="Blog" link="#" />
+        <LinkItem linkName="Payment And Delivery" link="#" />
+        <LinkItem linkName="Contacts" link="#" />
+        <LinkItem linkName="Public Offer" link="#" />
+        <LinkItem linkName="Cooperation" link="#" />
+        <LinkItem linkName="Privacy Policy" link="#" />
+        <LinkItem linkName="Help" link="#" />
       </div>
     </div>
   );

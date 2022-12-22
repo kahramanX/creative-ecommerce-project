@@ -1,0 +1,13 @@
+@import "assets/styles/variables.scss";
+
+.favoritespage {
+  @include general-responsive-padding-styles;
+
+  @include page-title-styles;
+
+  .page-content {
+    .favorited-products-container {
+      @include grid-system-for-products;
+    }
+  }
+}
