@@ -4,30 +4,30 @@ import LinkItem from "./shared/MenuItem";
 import OutsideClickHandler from "react-outside-click-handler";
 
 type Props = {
-  setOpenMenuOnHeader: React.Dispatch<
+  setOpenResponsiveMenuOnHeader: React.Dispatch<
     React.SetStateAction<boolean | undefined>
   >;
-  openMenuOnHeader: boolean | undefined;
+  openResponsiveMenuOnHeader: boolean | undefined;
 };
 
 const ResponsiveHeaderMenu: React.FC<Props> = ({
-  setOpenMenuOnHeader,
-  openMenuOnHeader,
+  setOpenResponsiveMenuOnHeader,
+  openResponsiveMenuOnHeader,
 }) => {
   return (
     <OutsideClickHandler
       onOutsideClick={() => {
-        setOpenMenuOnHeader(false);
+        setOpenResponsiveMenuOnHeader(false);
       }}
     >
       <div
         className={`responsive-header-menu-container ${
-          openMenuOnHeader === true ? "open" : "close"
+          openResponsiveMenuOnHeader === true ? "open" : "close"
         }`}
       >
         <div
           className="header-menu-mobile-close-btn"
-          onClick={() => setOpenMenuOnHeader(false)}
+          onClick={() => setOpenResponsiveMenuOnHeader(false)}
         >
           <span className="material-symbols-outlined">close</span>
         </div>

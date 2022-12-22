@@ -2,12 +2,12 @@ import LinkItem from "components/shared/MenuItem";
 import React from "react";
 
 type Props = {
-  setOpenMenuOnHeader: React.Dispatch<
+  setOpenResponsiveMenuOnHeader: React.Dispatch<
     React.SetStateAction<boolean | undefined>
   >;
 };
 
-const WideMenu: React.FC<Props> = ({ setOpenMenuOnHeader }) => {
+const WideMenu: React.FC<Props> = ({ setOpenResponsiveMenuOnHeader }) => {
   return (
     <div className="header-bottom-container">
       <div className="menu-list-container">
@@ -15,7 +15,7 @@ const WideMenu: React.FC<Props> = ({ setOpenMenuOnHeader }) => {
           linkName="Categories"
           link="#"
           linkIconName="expand_more"
-          action={() => setOpenMenuOnHeader(true)}
+          action={() => setOpenResponsiveMenuOnHeader(true)}
         />
         <LinkItem linkName="About Us" link="#" />
         <LinkItem linkName="Blog" link="#" />

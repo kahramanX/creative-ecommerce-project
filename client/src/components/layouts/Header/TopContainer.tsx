@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 type Props = {
-  setOpenMenuOnHeader: React.Dispatch<
+  setOpenResponsiveMenuOnHeader: React.Dispatch<
     React.SetStateAction<boolean | undefined>
   >;
 };
-const TopContainer: React.FC<Props> = ({ setOpenMenuOnHeader }) => {
+const TopContainer: React.FC<Props> = ({ setOpenResponsiveMenuOnHeader }) => {
   return (
     <div className="header-top-container">
       <div
         className="mobile-menu-btn"
-        onClick={() => setOpenMenuOnHeader(true)}
+        onClick={() => setOpenResponsiveMenuOnHeader(true)}
       >
         <span className="material-symbols-outlined">menu</span>
       </div>

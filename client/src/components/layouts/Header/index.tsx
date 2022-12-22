@@ -7,21 +7,26 @@ import ResponsiveHeaderMenu from "components/ResponsiveHeaderMenu";
 type Props = {};
 
 const Header: React.FC = () => {
-  const [openMenuOnHeader, setOpenMenuOnHeader] = useState<boolean>();
+  const [openResponsiveMenuOnHeader, setOpenResponsiveMenuOnHeader] =
+    useState<boolean>();
 
   return (
     <>
       <header>
-        <TopContainer setOpenMenuOnHeader={setOpenMenuOnHeader} />
-        <WideMenu setOpenMenuOnHeader={setOpenMenuOnHeader} />
+        <TopContainer
+          setOpenResponsiveMenuOnHeader={setOpenResponsiveMenuOnHeader}
+        />
+        <WideMenu
+          setOpenResponsiveMenuOnHeader={setOpenResponsiveMenuOnHeader}
+        />
       </header>
       <ResponsiveHeaderMenu
-        setOpenMenuOnHeader={setOpenMenuOnHeader}
-        openMenuOnHeader={openMenuOnHeader}
+        setOpenResponsiveMenuOnHeader={setOpenResponsiveMenuOnHeader}
+        openResponsiveMenuOnHeader={openResponsiveMenuOnHeader}
       />
       <div
         className={`ghost-screen ${
-          openMenuOnHeader === true ? "open" : "close"
+          openResponsiveMenuOnHeader === true ? "open" : "close"
         }`}
       ></div>
     </>
