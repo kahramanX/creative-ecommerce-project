@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 type Props = {
   linkName: string;
   linkIconName?: string;
-  link: string;
+  link?: string;
   action?: any;
 };
 
 const LinkItem: React.FC<Props> = ({
   linkName,
   linkIconName,
-  link,
+  link = "#",
   action,
 }) => {
   return (
