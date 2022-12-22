@@ -11,6 +11,7 @@ import SortedCategories from "./SortedCategories";
 import BlogPost from "components/shared/BlogPost";
 import LayeredButton from "components/shared/LayeredButton";
 import LayeredInput from "components/shared/LayeredInput";
+import MailSubscribtion from "./MailSubscribtion";
 
 type Props = {};
 
@@ -126,20 +127,7 @@ const HomePage: React.FC = (props: Props) => {
         })}
       </div>
       <div className="hp-subscription-section">
-        <div className="hp-subscription-form-container">
-          <div className="form-subs-left">
-            <div>
-              <p>Sign Up to be the first to know about new products,</p>
-              <p>special offers and promotions</p>
-            </div>
-            <LayeredInput placeholderText="Your Name" inputType="text" />
-            <LayeredInput placeholderText="Your Email" inputType="text" />
-            <LayeredButton text="Send" textSize="sm" />
-          </div>
-          <div className="form-subs-right">
-            <img src={FormImage} />
-          </div>
-        </div>
+        <MailSubscribtion />
       </div>
     </>
   );
