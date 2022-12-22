@@ -46,6 +46,10 @@
       details {
         summary {
           display: flex;
+
+          a {
+            pointer-events: none;
+          }
         }
 
         .mobile-acc-content {
