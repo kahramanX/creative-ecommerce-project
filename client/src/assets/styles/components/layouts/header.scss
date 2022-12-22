@@ -147,17 +147,6 @@ header {
       @media (max-width: 880px) {
         font-size: 14px;
       }
-
-      .list-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:hover {
-          cursor: pointer;
-          background-color: $base-yellow;
-        }
-      }
     }
   }
 }
