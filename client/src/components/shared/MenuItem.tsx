@@ -16,7 +16,7 @@ const LinkItem: React.FC<Props> = ({
   action,
 }) => {
   return (
-    <Link to={link} className="menu-item">
+    <Link to={link} className="menu-item" onClick={() => action()}>
       {linkName}
       {linkIconName && (
         <span className="material-symbols-outlined">{linkIconName}</span>
