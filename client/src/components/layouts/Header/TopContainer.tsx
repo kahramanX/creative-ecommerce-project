@@ -5,12 +5,8 @@ type Props = {
   setOpenMenuOnHeader: React.Dispatch<
     React.SetStateAction<boolean | undefined>
   >;
-  openMenuOnHeader: boolean | undefined;
 };
-const TopContainer: React.FC<Props> = ({
-  setOpenMenuOnHeader,
-  openMenuOnHeader,
-}) => {
+const TopContainer: React.FC<Props> = ({ setOpenMenuOnHeader }) => {
   return (
     <div className="header-top-container">
       <div

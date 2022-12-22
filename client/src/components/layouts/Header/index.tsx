@@ -12,14 +12,8 @@ const Header: React.FC = () => {
   return (
     <>
       <header>
-        <TopContainer
-          setOpenMenuOnHeader={setOpenMenuOnHeader}
-          openMenuOnHeader={openMenuOnHeader}
-        />
-        <WideMenu
-          setOpenMenuOnHeader={setOpenMenuOnHeader}
-          openMenuOnHeader={openMenuOnHeader}
-        />
+        <TopContainer setOpenMenuOnHeader={setOpenMenuOnHeader} />
+        <WideMenu setOpenMenuOnHeader={setOpenMenuOnHeader} />
       </header>
       <ResponsiveHeaderMenu
         setOpenMenuOnHeader={setOpenMenuOnHeader}

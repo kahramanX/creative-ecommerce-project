@@ -5,13 +5,9 @@ type Props = {
   setOpenMenuOnHeader: React.Dispatch<
     React.SetStateAction<boolean | undefined>
   >;
-  openMenuOnHeader: boolean | undefined;
 };
 
-const WideMenu: React.FC<Props> = ({
-  setOpenMenuOnHeader,
-  openMenuOnHeader,
-}) => {
+const WideMenu: React.FC<Props> = ({ setOpenMenuOnHeader }) => {
   return (
     <div className="header-bottom-container">
       <div className="menu-list-container">
