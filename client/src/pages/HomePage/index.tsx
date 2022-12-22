@@ -116,6 +116,7 @@ const HomePage: React.FC = (props: Props) => {
         {[0, 1, 2].map((product, index) => {
           return (
             <BlogPost
+              key={index}
               blogPostTitle="How to properly use patches under the eyes?"
               blogPostLink="bloglinkxxx"
               blogPostShortDesc="Putches under the eyes quickly entered the beauty sphere and today many women around the world use xxxxxxxxxxxxxxxxxxxxxxx"
