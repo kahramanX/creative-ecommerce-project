@@ -1,20 +1,17 @@
-import React from "react";
-import "assets/styles/components/searchPage/searchPage.scss";
-import LayeredInput from "components/shared/LayeredInput";
 import Product from "components/shared/Product";
+import React from "react";
 import BannerImage from "assets/images/bannerImage.webp";
 import NothingHere from "components/NothingHere";
 
 type Props = {};
 
-const SearchPage: React.FC = (props: Props) => {
+const FavoritesPage: React.FC = (props: Props) => {
   return (
     <div className="searchpage">
       <div className="page-title">
-        <h1>Search 🔍</h1>
+        <h1>Favorites ❤️</h1>
       </div>
       <div className="page-content">
-        <LayeredInput inputType="text" placeholderText="Search..." />
         <div className="searched-products-container">
           {[0, 1, 2, 3, 4, 5].map((product, index) => {
             return (
@@ -36,4 +33,4 @@ const SearchPage: React.FC = (props: Props) => {
   );
 };
 
-export default SearchPage;
+export default FavoritesPage;
