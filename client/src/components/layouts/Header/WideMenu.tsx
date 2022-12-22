@@ -2,9 +2,7 @@ import LinkItem from "components/shared/MenuItem";
 import React from "react";
 
 type Props = {
-  setOpenResponsiveMenuOnHeader: React.Dispatch<
-    React.SetStateAction<boolean | undefined>
-  >;
+  setOpenResponsiveMenuOnHeader: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const WideMenu: React.FC<Props> = ({ setOpenResponsiveMenuOnHeader }) => {

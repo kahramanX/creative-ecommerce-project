@@ -16,6 +16,12 @@
     border: $bold-border;
     background-color: $base-white;
     padding: 12px;
+    .header-desktop-menu {
+      display: block;
+    }
+    .header-mobile-menu {
+      display: none;
+    }
   }
 
   @media (max-width: 800px) {
@@ -28,6 +34,26 @@
     background-color: $base-white;
     padding: 22px;
     z-index: 5;
+    .header-desktop-menu {
+      display: none;
+    }
+
+    .header-mobile-menu {
+      height: 80%;
+      overflow-y: auto;
+      display: block;
+
+      details {
+        summary {
+          display: flex;
+        }
+
+        .mobile-acc-content {
+          border-left: $light-border;
+          margin-left: 26px;
+        }
+      }
+    }
   }
 
   a {
@@ -58,6 +84,10 @@
   }
 }
 
+.ghost-screen {
+  transition: opacity 200ms;
+}
+
 .ghost-screen.open {
   @media (max-width: 800px) {
     position: absolute;
@@ -75,5 +105,5 @@
 }
 
 .ghost-screen.close {
-  display: none;
+  opacity: 0;
 }

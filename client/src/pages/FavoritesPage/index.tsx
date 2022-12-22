@@ -21,6 +21,7 @@ const FavoritesPage: React.FC = (props: Props) => {
                 productImage={BannerImage}
                 productLink="#"
                 isDiscounted={true}
+                isFavorited={true}
                 prevPrice={60}
                 currentPrice={31}
               />
