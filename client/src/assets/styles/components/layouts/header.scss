@@ -55,7 +55,7 @@ header {
         justify-content: flex-start;
         padding-top: 16px;
         padding-bottom: 16px;
-        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🏠😀</text></svg>")
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🏠</text></svg>")
             16 0,
           auto; /*!emojicursor.app*/
 
@@ -121,6 +121,30 @@ header {
           margin-right: 12px;
           margin-left: 12px;
 
+          &:nth-child(1) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🔍</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(2) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>👤</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(3) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❤️</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
+          &:nth-child(4) {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🛒</text></svg>")
+                16 0,
+              auto; /*!emojicursor.app*/
+          }
+
           @media (max-width: 425px) {
             margin-right: 8px;
             margin-left: 8px;
@@ -137,10 +161,6 @@ header {
 
             @media (max-width: 425px) {
               font-size: 14px;
-            }
-
-            &:hover {
-              cursor: pointer;
             }
           }
         }

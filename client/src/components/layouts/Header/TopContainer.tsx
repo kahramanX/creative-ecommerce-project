@@ -27,18 +27,18 @@ const TopContainer: React.FC<Props> = ({ setOpenResponsiveMenuOnHeader }) => {
           <span className="selected-lang">EN</span>|<span>TR</span>
         </div>
         <div className="header-user-actions">
-          <div className="action-btn">
+          <Link to={"/search"} className="action-btn">
             <span className="material-symbols-outlined">search</span>
-          </div>
-          <div className="action-btn">
+          </Link>
+          <Link to={"/user"} className="action-btn">
             <span className="material-symbols-outlined">person</span>
-          </div>
-          <div className="action-btn">
+          </Link>
+          <Link to={"/favorites"} className="action-btn">
             <span className="material-symbols-outlined">favorite</span>
-          </div>
-          <div className="action-btn">
+          </Link>
+          <Link to={"/orders"} className="action-btn">
             <span className="material-symbols-outlined">shopping_bag</span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
