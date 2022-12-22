@@ -1,6 +1,8 @@
 @import "assets/styles/variables.scss";
 
 header {
+  position: relative;
+
   .header-top-container {
     border-bottom: $bold-border !important;
     display: grid;
