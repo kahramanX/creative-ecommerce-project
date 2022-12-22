@@ -8,12 +8,18 @@ header {
     display: grid;
     justify-content: space-between;
     grid-template-columns: 250px auto;
+    padding-left: 120px;
+    padding-right: 120px;
 
     @media (max-width: 800px) {
+      padding-left: 20px;
+      padding-right: 20px;
       grid-template-columns: 1fr 1fr 1fr !important;
     }
 
     @media (max-width: 425px) {
+      padding-left: 0px;
+      padding-right: 0px;
       grid-template-columns: 1fr 2fr 1fr !important;
     }
 
@@ -46,17 +52,22 @@ header {
         font-weight: 900;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         padding-top: 16px;
         padding-bottom: 16px;
         cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🏠😀</text></svg>")
             16 0,
           auto; /*!emojicursor.app*/
 
+        @media (max-width: 800px) {
+          justify-content: center;
+        }
+
         @media (max-width: 425px) {
           font-size: 14px;
           padding-top: 12px;
           padding-bottom: 12px;
+          justify-content: center;
         }
       }
     }
