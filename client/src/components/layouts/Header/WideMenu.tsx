@@ -1,6 +1,5 @@
 import LinkItem from "components/shared/MenuItem";
 import React from "react";
-import "assets/styles/components/responsiveHeaderMenu.scss";
 
 type Props = {
   setOpenMenuOnHeader: React.Dispatch<
