@@ -1,6 +1,7 @@
 import React from "react";
 import "assets/styles/components/shared/product.scss";
 import { Link } from "react-router-dom";
+import { FilledFavoriteIcons, OutlinedFavoriteIcons } from "assets/Icons/icons";
 
 type Props = {
   productTitle: string;
@@ -9,6 +10,7 @@ type Props = {
   isDiscounted: boolean;
   prevPrice?: number;
   currentPrice: number;
+  isFavorited?: boolean;
 };
 
 const Product: React.FC<Props> = ({
@@ -18,13 +20,18 @@ const Product: React.FC<Props> = ({
   prevPrice,
   currentPrice,
   productLink = "#",
+  isFavorited,
 }) => {
   return (
     <Link to={productLink}>
       <div className="product-box">
         <div className="product-top">
           <div className="product-fav">
-            <span className="material-symbols-outlined">favorite</span>
+            {isFavorited === true ? (
+              <FilledFavoriteIcons />
+            ) : (
+              <OutlinedFavoriteIcons />
+            )}
           </div>
           <div className="product-image">
             <img src={productImage} />
