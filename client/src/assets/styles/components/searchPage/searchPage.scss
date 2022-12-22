@@ -1,0 +1,21 @@
+@import "assets/styles/variables.scss";
+
+.searchpage {
+  @include general-responsive-padding-styles;
+
+  @include page-title-styles;
+
+  .page-content {
+    .layered-input-container {
+      width: 100%;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .searched-products-container {
+      @include grid-system-for-products;
+    }
+  }
+}

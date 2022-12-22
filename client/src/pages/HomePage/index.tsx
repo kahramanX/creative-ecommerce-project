@@ -3,14 +3,11 @@ import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Banner from "./Banner";
 import { FastAverageColor } from "fast-average-color";
-import FormImage from "assets/images/formImage.webp";
 import BannerImage from "assets/images/bannerImage.webp";
 import Product from "components/shared/Product";
 import "assets/styles/components/homePage/homepage.scss";
 import SortedCategories from "./SortedCategories";
 import BlogPost from "components/shared/BlogPost";
-import LayeredButton from "components/shared/LayeredButton";
-import LayeredInput from "components/shared/LayeredInput";
 import MailSubscribtion from "./MailSubscribtion";
 
 type Props = {};
