@@ -17,15 +17,53 @@ const UserPage = () => {
         <div className="page-content">
           <Tabs>
             <TabList>
-              <Tab>Title 1</Tab>
-              <Tab>Title 2</Tab>
+              <Tab>User</Tab>
+              <Tab>Address</Tab>
+              <Tab>Orders</Tab>
             </TabList>
 
             <TabPanel>
-              <h2>Any content 1</h2>
+              <div className="tab-content">
+                <table>
+                  <tr>
+                    <td className="table-title">User ID:</td>
+                    <td>321321312321</td>
+                  </tr>
+                  <tr>
+                    <td className="table-title">Name:</td>
+                    <td>Efe</td>
+                  </tr>
+                  <tr>
+                    <td className="table-title">Surname:</td>
+                    <td>Kahraman</td>
+                  </tr>
+                  <tr>
+                    <td className="table-title">E-mail:</td>
+                    <td>mustafaka335@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <td className="table-title">Phone:</td>
+                    <td>0 542 677 22 25</td>
+                  </tr>
+                  <tr>
+                    <td className="table-title">Gender:</td>
+                    <td>Male</td>
+                  </tr>
+                </table>
+              </div>
             </TabPanel>
             <TabPanel>
-              <h2>Any content 2</h2>
+              <div className="address-tab">
+                <div className="add-address">
+                  <span className="material-symbols-outlined">add</span>
+                </div>
+                <div className="attached-address">
+                  <div className="address-title">My Home</div>
+                </div>
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 3</h2>
             </TabPanel>
           </Tabs>
         </div>
