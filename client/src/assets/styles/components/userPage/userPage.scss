@@ -6,5 +6,81 @@
   @include page-title-styles;
 
   .page-content {
+    .tab-content {
+      table {
+        tr {
+          .table-title {
+            font-weight: 700;
+
+            @media (max-width: 425px) {
+              font-weight: 600;
+            }
+          }
+
+          td {
+            border: $light-border;
+            padding: 8px 18px;
+
+            @media (max-width: 425px) {
+              padding: 4px 12px;
+            }
+
+            &:first-child {
+              font-size: 22px;
+
+              @media (max-width: 425px) {
+                font-size: 14px;
+              }
+            }
+
+            &:last-child {
+              font-size: 18px;
+              font-weight: 500;
+
+              @media (max-width: 425px) {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .address-tab {
+      .add-address {
+        border: $light-border;
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>➕</text></svg>")
+            16 0,
+          auto; /*!emojicursor.app*/
+
+        @media (max-width: 375px) {
+          width: 100%;
+        }
+      }
+
+      .attached-address {
+        border: $light-border;
+        cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✏️</text></svg>")
+            16 0,
+          auto; /*!emojicursor.app*/
+
+        @media (max-width: 375px) {
+          width: 100%;
+        }
+
+        .address-title {
+          font-weight: 700;
+        }
+      }
+
+      div {
+        margin-bottom: 14px;
+        width: 250px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
   }
 }
