@@ -1,13 +1,13 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 
 const app = express();
 
-// THIS CODE FIX THAT CORS ERROR
+// THIS CODES FIX THAT CORS ERROR
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.ORIGIN,
     methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
   })
 );
@@ -19,11 +19,13 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // app.use("/api", router);
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Made on Earth by human" });
+app.get("/api", (req: Request, res: Response) => {
+  res.json({
+    message: "Made on Earth by human",
+  });
 });
 
-app.use("*", (req, res) => {
+app.use("*", (req: Request, res: Response) => {
   res.json({ message: "Unused Route" });
 });
 
