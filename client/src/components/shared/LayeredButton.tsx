@@ -11,7 +11,7 @@ const LayeredButton: React.FC<Props> = ({ text, textSize, action }) => {
   return (
     <div
       className={`layered-button-container text-${textSize}`}
-      onClick={() => action()}
+      onClick={() => (action == undefined ? "" : action())}
     >
       <div className="front-button">
         {text}

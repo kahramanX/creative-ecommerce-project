@@ -10,7 +10,10 @@ type Props = {
 const FlatButton: React.FC<Props> = ({ text, textSize, action }) => {
   return (
     <div className={`flat-button-container text-${textSize}`}>
-      <div className="front-button" onClick={() => action()}>
+      <div
+        className="front-button"
+        onClick={() => (action == undefined ? "" : action())}
+      >
         {text}
       </div>
     </div>

@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>MR.SCRUBBER</title>
+        <title>MR.SCRUBBER 🏠</title>
       </Helmet>
       <Banner bannerColorCode={bannerBackgroundColor} />
       <TextMarquee

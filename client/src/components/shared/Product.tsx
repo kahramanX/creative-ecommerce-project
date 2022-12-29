@@ -35,7 +35,7 @@ const Product: React.FC<Props> = ({
             )}
           </div>
           <div className="product-image">
-            <img src={productImage} />
+            <img src={productImage} alt={"img"} />
           </div>
         </div>
         <div className="product-bottom">

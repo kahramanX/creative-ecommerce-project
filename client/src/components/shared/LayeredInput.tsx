@@ -17,7 +17,7 @@ const LayeredInput: React.FC<Props> = ({
       <input
         type={inputType}
         placeholder={placeholderText}
-        onChange={() => onChangeAction()}
+        onChange={(e) => onChangeAction(e)}
       />
     </div>
   );
