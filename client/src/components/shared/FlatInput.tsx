@@ -27,6 +27,8 @@ const FlatInput: React.FC<Props> = ({
 
           if (e.target.value.length == 0) {
             setIsFocused("");
+          } else {
+            setIsFocused("focused-input");
           }
         }}
       />
