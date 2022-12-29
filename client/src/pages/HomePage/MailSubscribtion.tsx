@@ -16,7 +16,7 @@ const MailSubscribtion: React.FC = () => {
         <LayeredButton text="Send" textSize="sm" />
       </div>
       <div className="form-subs-right">
-        <img src={FormImage} />
+        <img src={FormImage} alt={"img"} />
       </div>
     </div>
   );

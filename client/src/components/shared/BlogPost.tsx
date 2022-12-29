@@ -18,7 +18,7 @@ const BlogPost: React.FC<Props> = ({
   return (
     <div className="blog-post-container">
       <div className="post-image">
-        <img src={blogPostImage} />
+        <img src={blogPostImage} alt={"img"} />
       </div>
       <div className="post-short-infos">
         <div className="post-title">{blogPostTitle}</div>

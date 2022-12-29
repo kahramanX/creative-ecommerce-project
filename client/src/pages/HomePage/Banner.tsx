@@ -15,7 +15,7 @@ const Banner: React.FC<Props> = ({ bannerColorCode }) => {
   return (
     <div className="banner-container">
       <div className="banner-left">
-        <img src={BannerImage} />
+        <img src={BannerImage} alt={"img"} />
       </div>
       <div style={bannerStyle} className="banner-right">
         <div className="banner-right-box">
