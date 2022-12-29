@@ -1,9 +1,9 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import "assets/styles/components/loginPage/loginPage.scss";
-import FlatInput from "components/shared/FlatInput";
 import LayeredInput from "components/shared/LayeredInput";
 import LayeredButton from "components/shared/LayeredButton";
+import { Link } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   return (
@@ -16,11 +16,17 @@ const LoginPage: React.FC = () => {
           <h1>Login 🔑</h1>
         </div>
         <div className="page-content">
-          <LayeredInput inputType={"text"} placeholderText={"E-mail"} />
+          <form>
+            <LayeredInput inputType={"text"} placeholderText={"E-mail"} />
+            <br />
+            <LayeredInput inputType={"text"} placeholderText={"Password"} />
+            <br />
+            <LayeredButton text="Login" textSize="md" />
+          </form>
           <br />
-          <LayeredInput inputType={"text"} placeholderText={"Password"} />
-
-          <LayeredButton text="Send" textSize="md" />
+          <div className="short-link">
+            Don't have an account? <Link to={"/register"}>Register</Link>
+          </div>
         </div>
       </div>
     </>

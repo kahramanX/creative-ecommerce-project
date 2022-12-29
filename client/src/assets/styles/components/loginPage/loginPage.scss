@@ -6,5 +6,11 @@
   @include page-title-styles;
 
   .page-content {
+    .short-link {
+      a {
+        text-decoration: underline;
+        font-weight: 700;
+      }
+    }
   }
 }
