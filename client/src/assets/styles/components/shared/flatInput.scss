@@ -1,0 +1,29 @@
+@import "assets/styles/variables.scss";
+
+.flat-input-container {
+  position: relative;
+  border: $light-border;
+  width: 250px;
+
+  label {
+    font-size: 16px;
+    position: absolute;
+    top: 30%;
+    left: 12px;
+    transition: font-size 200ms, top 200ms, left 200ms;
+  }
+
+  input {
+    padding: 12px 24px;
+    width: 100%;
+  }
+}
+
+.flat-input-container.focused-input {
+  label {
+    font-weight: 600;
+    font-size: 11px;
+    top: 3px !important;
+    left: 12px !important;
+  }
+}

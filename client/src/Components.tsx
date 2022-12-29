@@ -8,6 +8,7 @@ import BlogPost from "components/shared/BlogPost";
 import Accordion from "components/shared/Accordion";
 import FilterAccordion from "components/shared/FilterAccordion";
 import { FilteredAccordionI } from "types/types";
+import FlatInput from "components/shared/FlatInput";
 
 const Components: React.FC = () => {
   const FilterAccordionContent: FilteredAccordionI[] = [
@@ -52,6 +53,7 @@ const Components: React.FC = () => {
           onChangeAction={() => console.log(" on change")}
         />
       </div>
+
       <br />
       <div>
         <BlogPost
@@ -61,6 +63,7 @@ const Components: React.FC = () => {
           blogPostImage={BannerImage}
         />
       </div>
+      <br />
       <div>
         <Accordion
           accordionTitle="Just test bro"
@@ -69,15 +72,31 @@ const Components: React.FC = () => {
           }
         />
       </div>
-
+      <br />
       <div>
         <label htmlFor={"testing"}> Hey guys</label>
         <input id="testing" type={"checkbox"} />
         <input type={"checkbox"} defaultChecked />
         <input type={"radio"} defaultChecked />
       </div>
+      <br />
       <div>
         <FilterAccordion FATitle="Type" FAItems={FilterAccordionContent} />
+      </div>
+      <br />
+      <div>
+        <FlatInput
+          labelText="Your address"
+          inputType="text"
+          action={(e: React.ChangeEvent<HTMLInputElement>) =>
+            console.log(e.target.value)
+          }
+        />
+        <FlatInput
+          labelText="Your exrewrew"
+          inputType="text"
+          action={() => console.log("alfodsorewq")}
+        />
       </div>
     </div>
   );

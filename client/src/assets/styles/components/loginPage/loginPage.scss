@@ -1,0 +1,10 @@
+@import "assets/styles/variables.scss";
+
+.loginpage {
+  @include general-responsive-padding-styles;
+
+  @include page-title-styles;
+
+  .page-content {
+  }
+}
