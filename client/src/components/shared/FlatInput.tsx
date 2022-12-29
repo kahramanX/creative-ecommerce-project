@@ -31,6 +31,7 @@ const FlatInput: React.FC<Props> = ({
             setIsFocused("focused-input");
           }
         }}
+        onBlur={() => setIsFocused("")}
       />
     </div>
   );
