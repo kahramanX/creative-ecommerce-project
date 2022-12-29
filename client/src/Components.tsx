@@ -92,6 +92,7 @@ const Components: React.FC = () => {
             console.log(e.target.value)
           }
         />
+        <br />
         <FlatInput
           labelText="Your exrewrew"
           inputType="text"
