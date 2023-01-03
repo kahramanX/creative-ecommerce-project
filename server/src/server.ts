@@ -39,7 +39,7 @@ const sequelize = new Sequelize({
   }
 })();
 
-sequelize.sync().then(async () => {
+sequelize.sync({ alter: true }).then(async () => {
   console.log("RE-synced db.");
 });
 
