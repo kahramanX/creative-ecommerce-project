@@ -2,16 +2,12 @@ import React from "react";
 import BannerImage from "assets/images/bannerImage.webp";
 
 type Props = {
-  onHoverCategory: boolean;
   selectedImage: string;
-  setOnHoverCategory: React.Dispatch<React.SetStateAction<boolean>>;
   setSelectedImage: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const SortedCategories: React.FC<Props> = ({
-  onHoverCategory,
   selectedImage,
-  setOnHoverCategory,
   setSelectedImage,
 }) => {
   const categoryItems = [
@@ -38,13 +34,10 @@ const SortedCategories: React.FC<Props> = ({
               <label
                 key={index}
                 htmlFor={`checkbox-${index}`}
-                className={`category-item ${
-                  onHoverCategory && "hovered-category"
-                }`}
+                className={`category-item `}
                 onMouseEnter={() => {
                   setSelectedImage(category.categoryImage);
                 }}
-                onMouseLeave={() => setOnHoverCategory(false)}
               >
                 <span className="material-symbols-outlined">star</span>
                 <span className="category-text">{category.categoryName}</span>
