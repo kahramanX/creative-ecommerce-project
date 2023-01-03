@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "- NodeJS\r - TypeScript\r - PostgreSQL",
+  "description": "- NodeJS\r - TypeScript\r - Sequelize(PostgreSQL)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/server.ts"
   },
   "keywords": [],
   "author": "",
