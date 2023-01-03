@@ -34,20 +34,22 @@ const SortedCategories: React.FC<Props> = ({
       <div className="sorted-categories">
         {categoryItems.map((category, index) => {
           return (
-            <div
-              key={index}
-              className={`category-item ${
-                onHoverCategory && "hovered-category"
-              }`}
-              onMouseEnter={() => {
-                setOnHoverCategory(true);
-                setSelectedImage(category.categoryImage);
-              }}
-              onMouseLeave={() => setOnHoverCategory(false)}
-            >
-              <span className="material-symbols-outlined">star</span>
-              <span className="category-text">{category.categoryName}</span>
-            </div>
+            <>
+              <label
+                key={index}
+                htmlFor={`checkbox-${index}`}
+                className={`category-item ${
+                  onHoverCategory && "hovered-category"
+                }`}
+                onMouseEnter={() => {
+                  setSelectedImage(category.categoryImage);
+                }}
+                onMouseLeave={() => setOnHoverCategory(false)}
+              >
+                <span className="material-symbols-outlined">star</span>
+                <span className="category-text">{category.categoryName}</span>
+              </label>
+            </>
           );
         })}
       </div>
