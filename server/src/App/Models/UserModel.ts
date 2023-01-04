@@ -5,27 +5,35 @@ class UserModel extends Model {}
 
 UserModel.init(
   {
-    myID: {
+    user_id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true,
     },
-    secondID: {
-      type: DataTypes.INTEGER,
-      defaultValue: 33,
+    first_name: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
     },
-    firstName: {
-      type: DataTypes.STRING,
+    last_name: {
+      type: DataTypes.STRING(30),
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING(30),
       allowNull: true,
     },
-    lastName: {
-      type: DataTypes.STRING,
+    phone: {
+      type: DataTypes.STRING(10),
       allowNull: true,
+    },
+    email: {
+      type: DataTypes.STRING(50),
+      allowNull: false,
     },
   },
   {
     sequelize,
-    tableName: "instructors",
+    tableName: "User",
     timestamps: false,
     freezeTableName: true,
   }
