@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import { Sequelize } from "sequelize";
+import UserModel from "./App/Models/UserModel";
 
 const app = express();
 
@@ -20,14 +21,16 @@ dotenv.config();
 app.use(express.json({ limit: "5mb" }));
 app.use(express.urlencoded({ extended: true, limit: "5mb" }));
 
-const sequelize = new Sequelize({
-  username: process.env.DB_USERNAME,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: Number(process.env.DB_PORT),
-  host: process.env.DB_HOST,
-  dialect: "postgres",
-});
+const sequelize = new Sequelize(
+  `test_db`,
+  `${process.env.DB_USERNAME}`,
+  `${process.env.DB_PASSWORD}`,
+  {
+    port: Number(process.env.DB_PORT),
+    host: process.env.DB_HOST,
+    dialect: "postgres",
+  }
+);
 
 // DB CONNECTION
 (async () => {
@@ -39,14 +42,19 @@ const sequelize = new Sequelize({
   }
 })();
 
-sequelize.sync({ alter: true }).then(async () => {
-  console.log("RE-synced db.");
-});
-
-app.use("/api", cors(corsOptions), (req: Request, res: Response) => {
-  res.json({
-    message: "Its worked!",
-  });
+app.get("/api", cors(corsOptions), (req: Request, res: Response) => {
+  UserModel.create({ firstName: "test", lastName: "test mk" })
+    .then((success) => {
+      res.json({
+        message: "Its worked!",
+        data: success,
+      });
+      console.log("----BAŞARILI----");
+    })
+    .catch((err) => {
+      console.log(err);
+      console.log("----BAŞARISIZ----");
+    });
 });
 
 app.use("*", (req: Request, res: Response) => {
@@ -55,6 +63,10 @@ app.use("*", (req: Request, res: Response) => {
 
 app.listen(process.env.PORT, () => {
   return console.log(`Server running on http://localhost:${process.env.PORT}`);
+});
+
+sequelize.sync({ alter: true }).then(async () => {
+  console.log("RE-synced db.");
 });
 
 export { app, sequelize };
