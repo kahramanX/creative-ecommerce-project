@@ -17,18 +17,34 @@ export const createUser = (req: Request, res: Response) => {
   // User Schema Validation
   userSchema.isValid(req.body).then((isValid) => {
     if (isValid) {
-      // User Created
-      UserModel.create({
-        first_name,
-        last_name,
-        password,
-        email,
-        phone,
-      })
-        .then(() => {
-          res.json({
-            status: true,
-          });
+      // Find already registered user from email
+      UserModel.findAll({ where: { email: email } })
+        .then((userEmail) => {
+          if (userEmail.length == 0) {
+            // User Created
+            UserModel.create({
+              first_name,
+              last_name,
+              password,
+              email,
+              phone,
+            })
+              .then(() => {
+                res.json({
+                  status: true,
+                });
+              })
+              .catch(() => {
+                res.json({
+                  status: false,
+                });
+              });
+          } else {
+            res.json({
+              status: false,
+              message: "user_already_registered",
+            });
+          }
         })
         .catch(() => {
           res.json({
