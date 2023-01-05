@@ -1,12 +1,11 @@
-import { Router, Request, Response } from "express";
+import * as userController from "../Controllers/UserController";
+import { Router } from "express";
+
 const router = Router();
 
 // User Routes
-router.get("/:userID/create", (req: Request, res: Response) => {
-  res.json({
-    userID: Number(req.params.userID),
-  });
-});
+router.post("/create", userController.createUser);
+
 router.get("/:userID/get", () => {});
 router.delete("/:userID/delete", () => {});
 router.patch("/:userID/update", () => {});
