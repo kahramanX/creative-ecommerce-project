@@ -74,22 +74,22 @@
               margin-left 200ms;
           }
         }
-      }
 
-      .hovered-category {
-        background-color: $base-pink;
+        &:hover {
+          background-color: $base-pink;
 
-        span {
-          &:first-child {
-            visibility: visible;
-          }
+          span {
+            &:first-child {
+              visibility: visible;
+            }
 
-          &:last-child {
-            margin-left: 0px;
-            color: $base-white;
-            -webkit-text-stroke: 1px;
-            -webkit-text-stroke-color: black;
-            letter-spacing: 1px;
+            &:last-child {
+              margin-left: 0px;
+              color: $base-white;
+              -webkit-text-stroke: 1px;
+              -webkit-text-stroke-color: black;
+              letter-spacing: 1px;
+            }
           }
         }
       }

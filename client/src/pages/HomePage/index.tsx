@@ -12,7 +12,6 @@ import MailSubscribtion from "./MailSubscribtion";
 
 const HomePage: React.FC = () => {
   const [bannerBackgroundColor, setBannerBackgroundColor] = useState<string>();
-  const [onHoverCategory, setOnHoverCategory] = useState<boolean>(false);
   const [selectedImage, setSelectedImage] = useState<string>(BannerImage);
 
   async function getAverageColorFromBannerImage() {
@@ -71,9 +70,7 @@ const HomePage: React.FC = () => {
       />
       <div className="hp-categories-section">
         <SortedCategories
-          setOnHoverCategory={setOnHoverCategory}
           setSelectedImage={setSelectedImage}
-          onHoverCategory={onHoverCategory}
           selectedImage={selectedImage}
         />
       </div>
