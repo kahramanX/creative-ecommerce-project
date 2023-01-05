@@ -7,7 +7,7 @@ const router = Router();
 router.post("/create", userController.createUser);
 router.post("/login", userController.loginUser);
 
-router.get("/:userID/get", () => {});
+router.get("/:userID/get", userController.getUserInfos);
 router.delete("/:userID/delete", () => {});
 router.patch("/:userID/update", () => {});
 

@@ -68,8 +68,6 @@ export const loginUser = (req: Request, res: Response) => {
       password: password,
     },
   }).then((loggedUser) => {
-    console.log("loggedUser", loggedUser);
-
     // User Schema created for schema validation
     const userSchema = yup.object({
       email: yup.string().max(50).email().required().trim(),
@@ -79,6 +77,7 @@ export const loginUser = (req: Request, res: Response) => {
     // User Schema Validation
     userSchema.isValid(req.body).then((isValid) => {
       if (isValid) {
+        // if loggedUser return null, there is no user
         if (loggedUser) {
           res.json({ status: true, data: loggedUser });
         } else {
@@ -88,5 +87,17 @@ export const loginUser = (req: Request, res: Response) => {
         res.json({ status: false });
       }
     });
+  });
+};
+
+export const getUserInfos = (req: Request, res: Response) => {
+  const { userID } = req.params;
+
+  UserModel.findOne({ where: { user_id: userID } }).then((userInfos) => {
+    if (userInfos) {
+      res.json({ status: true, data: userInfos });
+    } else {
+      res.json({ status: false, message: "no_user" });
+    }
   });
 };
