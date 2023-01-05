@@ -4,7 +4,7 @@ const router = Router();
 // User Routes
 router.get("/:userID/create", (req: Request, res: Response) => {
   res.json({
-    data: req.params,
+    userID: Number(req.params.userID),
   });
 });
 router.get("/:userID/get", () => {});
