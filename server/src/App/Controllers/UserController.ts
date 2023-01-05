@@ -58,3 +58,35 @@ export const createUser = (req: Request, res: Response) => {
     }
   });
 };
+
+export const loginUser = (req: Request, res: Response) => {
+  const { email, password } = req.body;
+
+  UserModel.findOne({
+    where: {
+      email: email,
+      password: password,
+    },
+  }).then((loggedUser) => {
+    console.log("loggedUser", loggedUser);
+
+    // User Schema created for schema validation
+    const userSchema = yup.object({
+      email: yup.string().max(50).email().required().trim(),
+      password: yup.string().max(30).required().trim(),
+    });
+
+    // User Schema Validation
+    userSchema.isValid(req.body).then((isValid) => {
+      if (isValid) {
+        if (loggedUser) {
+          res.json({ status: true, data: loggedUser });
+        } else {
+          res.json({ status: false, message: "false_email_or_password" });
+        }
+      } else {
+        res.json({ status: false });
+      }
+    });
+  });
+};

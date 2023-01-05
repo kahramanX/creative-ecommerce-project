@@ -5,6 +5,7 @@ const router = Router();
 
 // User Routes
 router.post("/create", userController.createUser);
+router.post("/login", userController.loginUser);
 
 router.get("/:userID/get", () => {});
 router.delete("/:userID/delete", () => {});
