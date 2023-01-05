@@ -8,7 +8,7 @@ router.post("/create", userController.createUser);
 router.post("/login", userController.loginUser);
 
 router.get("/:userID/get", userController.getUserInfos);
-router.delete("/:userID/delete", () => {});
+router.delete("/:userID/delete", userController.deleteUser);
 router.patch("/:userID/update", () => {});
 
 export default router;

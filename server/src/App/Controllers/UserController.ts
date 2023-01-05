@@ -101,3 +101,19 @@ export const getUserInfos = (req: Request, res: Response) => {
     }
   });
 };
+
+export const deleteUser = (req: Request, res: Response) => {
+  const { userID } = req.params;
+
+  UserModel.destroy({
+    where: {
+      user_id: userID,
+    },
+  }).then((willBeDeletedUser) => {
+    if (willBeDeletedUser != 0) {
+      res.json({ status: true, willBeDeletedUser });
+    } else {
+      res.json({ status: false, message: "no_user" });
+    }
+  });
+};
