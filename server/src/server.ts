@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import { Sequelize } from "sequelize";
@@ -42,8 +42,9 @@ const sequelize = new Sequelize(
   }
 })();
 
-// User -> Favorites Routes
+// User Routes
 app.use("/api/user", cors(corsOptions), routes.userRoutes);
+app.use("/api/address", cors(corsOptions), routes.userAddressRoutes);
 
 /* app.use("*", (req: Request, res: Response) => {
   res.json({ message: "Unused Route", madeBy: "Made on Earth by human" }).end();
