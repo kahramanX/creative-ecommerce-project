@@ -111,9 +111,25 @@ export const deleteUser = (req: Request, res: Response) => {
     },
   }).then((willBeDeletedUser) => {
     if (willBeDeletedUser != 0) {
-      res.json({ status: true, willBeDeletedUser });
+      res.json({ status: true });
     } else {
       res.json({ status: false, message: "no_user" });
+    }
+  });
+};
+
+export const updateUser = (req: Request, res: Response) => {
+  const { userID } = req.params;
+  const { first_name, last_name, email, password, phone } = req.body;
+
+  UserModel.update(
+    { first_name, last_name, email, password, phone },
+    { where: { user_id: userID } }
+  ).then((willBeUpdatedUser: any) => {
+    if (willBeUpdatedUser != 0) {
+      res.json({ status: true });
+    } else {
+      res.json({ status: false, message: "updated_user_error" });
     }
   });
 };

@@ -9,6 +9,6 @@ router.post("/login", userController.loginUser);
 
 router.get("/:userID/get", userController.getUserInfos);
 router.delete("/:userID/delete", userController.deleteUser);
-router.patch("/:userID/update", () => {});
+router.patch("/:userID/update", userController.updateUser);
 
 export default router;
