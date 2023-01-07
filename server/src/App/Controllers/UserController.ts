@@ -71,7 +71,7 @@ export const loginUser = (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   // User Schema created for schema validation
-  const userSchema = yup.object({
+  const userLoginSchema = yup.object({
     email: yup.string().max(50).email().required().trim(),
     password: yup.string().max(30).required().trim(),
   });
@@ -84,7 +84,7 @@ export const loginUser = (req: Request, res: Response) => {
   })
     .then((loggedUser) => {
       // User Schema Validation
-      userSchema
+      userLoginSchema
         .isValid(req.body)
         .then((isValid) => {
           if (isValid) {
