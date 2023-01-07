@@ -40,11 +40,11 @@ UserModel.init(
   }
 );
 
-UserModel.hasOne(UserAddressModel, { foreignKey: "user_address_id" });
-UserAddressModel.belongsTo(UserModel);
-
-UserModel.sync({ alter: true }).then(async () => {
-  console.log("Synced UserModel.");
+UserModel.hasOne(UserAddressModel, {
+  foreignKey: {
+    allowNull: false,
+  },
 });
+UserAddressModel.belongsTo(UserModel);
 
 export default UserModel;

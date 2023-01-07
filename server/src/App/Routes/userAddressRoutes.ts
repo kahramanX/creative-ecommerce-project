@@ -5,6 +5,6 @@ const router = Router();
 
 //User Address Routes
 //Create Address
-router.get("/:userID/create", UserAddressController.createUserAddress);
+router.post("/:userID/create", UserAddressController.createUserAddress);
 
 export default router;

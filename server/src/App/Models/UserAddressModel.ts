@@ -1,37 +1,37 @@
-import { Model, DataTypes, Association } from "sequelize";
+import { Model, DataTypes } from "sequelize";
 import sequelize from "../../Database/dbConnectionForModels";
 
 class UserAddressModel extends Model {}
 
 UserAddressModel.init(
   {
-    user_address_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-    },
     address_line_1: {
       type: DataTypes.STRING(200),
-      allowNull: false,
+      allowNull: true,
     },
     address_line_2: {
       type: DataTypes.STRING(200),
-      allowNull: false,
+      allowNull: true,
     },
     country: {
       type: DataTypes.STRING(30),
-      allowNull: false,
+      allowNull: true,
     },
     city: {
       type: DataTypes.STRING(30),
-      allowNull: false,
+      allowNull: true,
+    },
+    district: {
+      type: DataTypes.STRING(30),
+      allowNull: true,
     },
     postal_code: {
-      type: DataTypes.STRING(50),
-      allowNull: false,
+      type: DataTypes.STRING(10),
+      allowNull: true,
     },
     address_phone: {
       type: DataTypes.STRING(10),
-      allowNull: false,
+      allowNull: true,
     },
   },
   {
@@ -41,9 +41,5 @@ UserAddressModel.init(
     freezeTableName: true,
   }
 );
-
-UserAddressModel.sync({ alter: true }).then(async () => {
-  console.log("Synced UserAddressModel.");
-});
 
 export default UserAddressModel;
