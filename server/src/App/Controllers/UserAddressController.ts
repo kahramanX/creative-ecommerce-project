@@ -33,7 +33,4 @@ export const createUserAddress = (req: Request, res: Response) => {
 
       res.json({ status: false, message: "olmadı knk", data: error });
     });
-
-  //UserAddressModel.drop().then(() => console.log("delindi"));
-  //UserModel.drop().then(() => console.log("delindi"));
 };
