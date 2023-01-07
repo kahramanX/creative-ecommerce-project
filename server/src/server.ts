@@ -1,8 +1,10 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
 import { Sequelize } from "sequelize";
 import routes from "./App/Routes/index";
+import UserAddressModel from "./App/Models/UserAddressModel";
+import UserModel from "./App/Models/UserModel";
 
 const app = express();
 
@@ -42,8 +44,9 @@ const sequelize = new Sequelize(
   }
 })();
 
-// User -> Favorites Routes
+// User Routes
 app.use("/api/user", cors(corsOptions), routes.userRoutes);
+app.use("/api/address", cors(corsOptions), routes.userAddressRoutes);
 
 /* app.use("*", (req: Request, res: Response) => {
   res.json({ message: "Unused Route", madeBy: "Made on Earth by human" }).end();
@@ -51,8 +54,19 @@ app.use("/api/user", cors(corsOptions), routes.userRoutes);
 
 sequelize.sync({ alter: true }).then(async () => {
   console.log("RE-synced db.");
+
+  UserAddressModel.sync({ alter: true }).then(async () => {
+    console.log("Synced UserAddressModel.");
+  });
+
+  UserModel.sync({ alter: true }).then(async () => {
+    console.log("Synced UserModel.");
+  });
 });
 
+/* UserAddressModel.drop().then(() => console.log("delindi"));
+UserModel.drop().then(() => console.log("delindi"));
+ */
 app.listen(process.env.PORT, () => {
   return console.log(`Server running on http://localhost:${process.env.PORT}`);
 });

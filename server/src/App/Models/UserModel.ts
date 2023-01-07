@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../../Database/dbConnectionForModels";
+import UserAddressModel from "./UserAddressModel";
 
 class UserModel extends Model {}
 
@@ -39,8 +40,11 @@ UserModel.init(
   }
 );
 
-UserModel.sync({ alter: true }).then(async () => {
-  console.log("Synced UserModel.");
+UserModel.hasOne(UserAddressModel, {
+  foreignKey: {
+    allowNull: false,
+  },
 });
+UserAddressModel.belongsTo(UserModel);
 
 export default UserModel;
