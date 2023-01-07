@@ -80,3 +80,17 @@ export const deleteUserAddress = (req: Request, res: Response) => {
       });
     });
 };
+
+export const getUserAddressInfos = (req: Request, res: Response) => {
+  const { userID } = req.params;
+
+  UserAddressModel.findOne({ where: { UserModelUserId: userID } }).then(
+    (userAddressInfos) => {
+      if (userAddressInfos) {
+        res.json({ status: true, data: userAddressInfos });
+      } else {
+        res.json({ status: false, message: "no_user_address" });
+      }
+    }
+  );
+};
