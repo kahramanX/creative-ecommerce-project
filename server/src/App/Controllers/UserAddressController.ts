@@ -58,3 +58,25 @@ export const createUserAddress = (req: Request, res: Response) => {
       });
     });
 };
+
+export const deleteUserAddress = (req: Request, res: Response) => {
+  const { userID } = req.params;
+
+  UserAddressModel.destroy({
+    where: {
+      UserModelUserId: userID,
+    },
+  })
+    .then((willBeDeletedUserAddress) => {
+      if (willBeDeletedUserAddress != 0) {
+        res.json({ status: true });
+      } else {
+        res.json({ status: false, message: "no_user_address" });
+      }
+    })
+    .catch(() => {
+      res.json({
+        status: false,
+      });
+    });
+};
