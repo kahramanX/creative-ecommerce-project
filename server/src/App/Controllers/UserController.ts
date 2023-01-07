@@ -70,6 +70,12 @@ export const createUser = (req: Request, res: Response) => {
 export const loginUser = (req: Request, res: Response) => {
   const { email, password } = req.body;
 
+  // User Schema created for schema validation
+  const userSchema = yup.object({
+    email: yup.string().max(50).email().required().trim(),
+    password: yup.string().max(30).required().trim(),
+  });
+
   UserModel.findOne({
     where: {
       email: email,
@@ -77,12 +83,6 @@ export const loginUser = (req: Request, res: Response) => {
     },
   })
     .then((loggedUser) => {
-      // User Schema created for schema validation
-      const userSchema = yup.object({
-        email: yup.string().max(50).email().required().trim(),
-        password: yup.string().max(30).required().trim(),
-      });
-
       // User Schema Validation
       userSchema
         .isValid(req.body)
@@ -149,6 +149,16 @@ export const deleteUser = (req: Request, res: Response) => {
 export const updateUser = (req: Request, res: Response) => {
   const { userID } = req.params;
   const { first_name, last_name, email, password, phone } = req.body;
+
+  // I cannot add this schema. Because, the schema and Sequelize have concflict
+  /*   // User Update Schema created for schema validation
+  const userUpdateSchema = yup.object({
+    first_name: yup.string().max(30).required().trim(),
+    last_name: yup.string().max(30).required().trim(),
+    password: yup.string().max(30).required().trim(),
+    email: yup.string().max(50).email().required().trim(),
+    phone: yup.string().max(10).required().trim(),
+  }); */
 
   UserModel.update(
     { first_name, last_name, email, password, phone },
