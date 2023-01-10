@@ -9,7 +9,6 @@ import "assets/styles/components/homePage/homepage.scss";
 import SortedCategories from "./SortedCategories";
 import BlogPost from "components/shared/BlogPost";
 import MailSubscribtion from "./MailSubscribtion";
-import { useGetUserInfoQuery } from "store/API/apiSlice";
 
 const HomePage: React.FC = () => {
   const [bannerBackgroundColor, setBannerBackgroundColor] = useState<string>();
@@ -33,12 +32,6 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     getAverageColorFromBannerImage();
   }, []);
-
-  const { data, isLoading, isSuccess, isError, error } = useGetUserInfoQuery();
-
-  useEffect(() => {
-    console.log("RTK test: ", data);
-  }, [data]);
 
   return (
     <>
