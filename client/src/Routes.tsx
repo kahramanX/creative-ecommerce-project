@@ -13,7 +13,14 @@ const Routers: React.FC = () => {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/search" element={<SearchPage />} />
-      <Route path="/favorites" element={<FavoritesPage />} />
+      <Route
+        path="/favorites"
+        element={
+          <PrivateRoute>
+            <FavoritesPage />
+          </PrivateRoute>
+        }
+      />
       <Route
         path="/user"
         element={
