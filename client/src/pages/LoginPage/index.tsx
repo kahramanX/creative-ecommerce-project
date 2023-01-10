@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import "assets/styles/components/loginPage/loginPage.scss";
 import LayeredInput from "components/shared/LayeredInput";
 import LayeredButton from "components/shared/LayeredButton";
 import { Link } from "react-router-dom";
+import { useUserLoginMutation } from "store/API/apiSlice";
 
 const LoginPage: React.FC = () => {
+  const [userLogin] = useUserLoginMutation();
+
   return (
     <>
       <Helmet>
@@ -21,7 +24,11 @@ const LoginPage: React.FC = () => {
             <br />
             <LayeredInput inputType={"text"} placeholderText={"Password"} />
             <br />
-            <LayeredButton text="Login" textSize="md" />
+            <LayeredButton
+              text="Login"
+              textSize="md"
+              action={() => userLogin("wtf bune")}
+            />
           </form>
           <br />
           <div className="short-link">

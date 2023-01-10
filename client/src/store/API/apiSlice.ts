@@ -5,11 +5,18 @@ export const apiSlice: any = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${process.env.REACT_APP_API_DEV_URL}/api`,
   }),
+  tagTypes: ["Api"],
   endpoints: (builder) => ({
     userLogin: builder.mutation({
-      query: () => `/user/login`,
+      query: (data) => {
+        console.log("apiSlice", data);
+
+        return { url: "/user/login", method: "POST", body: data };
+      },
+      invalidatesTags: ["Api"],
+      transformResponse: (res) => console.log(res, "çıkan sonuç"),
     }),
   }),
 });
 
-export const { useGetUserInfoQuery } = apiSlice;
+export const { useUserLoginMutation } = apiSlice;
