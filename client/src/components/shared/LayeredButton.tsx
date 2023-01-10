@@ -9,15 +9,15 @@ type Props = {
 
 const LayeredButton: React.FC<Props> = ({ text, textSize, action }) => {
   return (
-    <div
+    <button
       className={`layered-button-container text-${textSize}`}
-      onClick={() => (action == undefined ? "" : action())}
+      onClick={() => (action === undefined ? "" : action())}
     >
       <div className="front-button">
         {text}
         <span className="material-symbols-outlined">arrow_forward</span>
       </div>
-    </div>
+    </button>
   );
 };
 

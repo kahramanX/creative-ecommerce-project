@@ -5,19 +5,24 @@ type Props = {
   inputType: "text" | "number";
   placeholderText: string;
   onChangeAction?: any;
+  registerInfos?: any;
 };
 
 const LayeredInput: React.FC<Props> = ({
   inputType = "text",
   placeholderText,
   onChangeAction,
+  registerInfos,
 }) => {
   return (
     <div className="layered-input-container">
       <input
+        {...registerInfos}
         type={inputType}
         placeholder={placeholderText}
-        onChange={(e) => onChangeAction(e)}
+        onChange={(e) =>
+          onChangeAction === undefined ? "" : onChangeAction(e)
+        }
       />
     </div>
   );
