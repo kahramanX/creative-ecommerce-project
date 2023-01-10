@@ -14,7 +14,7 @@ export const apiSlice: any = createApi({
         return { url: "/user/login", method: "POST", body: data };
       },
       invalidatesTags: ["Api"],
-      transformResponse: (res) => console.log(res, "çıkan sonuç"),
+      transformResponse: (res) => console.log(res),
     }),
   }),
 });
