@@ -70,6 +70,8 @@ export const createUser = (req: Request, res: Response) => {
 export const loginUser = (req: Request, res: Response) => {
   const { email, password } = req.body;
 
+  console.log("req.body", req.body);
+
   // User Schema created for schema validation
   const userLoginSchema = yup.object({
     email: yup.string().max(50).email().required().trim(),
@@ -90,9 +92,11 @@ export const loginUser = (req: Request, res: Response) => {
           if (isValid) {
             // if loggedUser return null, there is no user
             if (loggedUser) {
-              res.json({ status: true, data: loggedUser });
+              res.json({ status: true, data: loggedUser }).end();
             } else {
-              res.json({ status: false, message: "false_email_or_password" });
+              res
+                .json({ status: false, message: "false_email_or_password" })
+                .end();
             }
           } else {
             res.json({ status: false });

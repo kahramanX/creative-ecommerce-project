@@ -3,13 +3,17 @@ import { Helmet } from "react-helmet-async";
 import "assets/styles/components/loginPage/loginPage.scss";
 import LayeredInput from "components/shared/LayeredInput";
 import LayeredButton from "components/shared/LayeredButton";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUserLoginMutation } from "store/API/apiSlice";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
+import { useDispatch } from "react-redux";
+import { setLogin } from "store/authSlice";
 
 const LoginPage: React.FC = () => {
-  const [userLogin] = useUserLoginMutation();
+  const [userLogin, data] = useUserLoginMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const validationSchema = yup.object().shape({
     email: yup.string().max(50).email().required().trim(),
@@ -19,8 +23,13 @@ const LoginPage: React.FC = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    //formState: { errors },
   } = useForm();
+
+  const _getUserLoginResult = async () => {
+    const dataX = await userLogin().unwrap();
+    console.log(dataX);
+  };
 
   return (
     <>
@@ -33,11 +42,17 @@ const LoginPage: React.FC = () => {
         </div>
         <div className="page-content">
           <form
-            onSubmit={handleSubmit((data) => {
-              validationSchema.isValid(data).then((status) => {
+            onSubmit={handleSubmit((datas) => {
+              validationSchema.isValid(datas).then((status) => {
                 if (status) {
-                  userLogin(data);
+                  userLogin(datas);
+                  console.log("userLoginResults 2", data);
+                  dispatch(setLogin(true));
+                  _getUserLoginResult();
+
+                  navigate("/user");
                 } else {
+                  //form error
                   console.log("not true");
                 }
               });
@@ -66,5 +81,4 @@ const LoginPage: React.FC = () => {
     </>
   );
 };
-
 export default LoginPage;

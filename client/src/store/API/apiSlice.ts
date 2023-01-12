@@ -9,12 +9,16 @@ export const apiSlice: any = createApi({
   endpoints: (builder) => ({
     userLogin: builder.mutation({
       query: (data) => {
-        console.log("apiSlice", data);
-
-        return { url: "/user/login", method: "POST", body: data };
+        return {
+          url: "/user/login",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        };
       },
       invalidatesTags: ["Api"],
-      transformResponse: (res) => console.log(res),
     }),
   }),
 });
